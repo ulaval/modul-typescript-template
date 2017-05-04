@@ -6,7 +6,7 @@
     "scripts": {
         "clean": "rimraf dist",
         "dev": "webpack-dev-server --config conf/webpack.config.js --content-base src --colors --port 5000 --open",
-        "build": "webpack --config conf/webpack.config.js --colors",
+        "build": "webpack --config conf/webpack.config.js --colors --optimize-minimize",
         "prod": "http-server dist -p 5000 -g -o",
         "unit": "",
         "e2e": "",
@@ -32,8 +32,10 @@
         "sass-loader": "^6.0.3",
         "style-loader": "^0.17.0",
         "typescript": "^2.3.2",
+        "uglify-js": "^2.8.22",
         "vue-template-compiler": "2.3.2",
         "vue-template-loader": "^0.3.1",
+        "uglifyjs-webpack-plugin": "^0.4.3",
         "webpack": "^2.4.1",
         "webpack-dev-server": "^2.4.5"
     },

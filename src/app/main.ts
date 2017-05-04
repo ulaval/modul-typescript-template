@@ -1,4 +1,4 @@
-import './polyfills'
+import Polyfills from './polyfills'
 import Vue from 'vue'
 import Test from './components/test/Test'
 

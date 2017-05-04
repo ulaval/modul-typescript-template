@@ -1,19 +1,20 @@
 {
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "*": ["src/*"]
-    },
-    "experimentalDecorators": true,
-    "module": "es2015",
-    "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    "types": [
-      "node",
-      "vue"
-    ],
-    "typeRoots": [
-      "node_modules/@types"
-    ]
-  }
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "*": ["src/*"]
+        },
+        "target": "es5",
+        "module": "amd",
+        "moduleResolution": "node",
+        "experimentalDecorators": true,
+        "allowSyntheticDefaultImports": true,
+        "types": [
+            "node",
+            "vue"
+        ],
+        "typeRoots": [
+            "node_modules/@types"
+        ]
+    }
 }

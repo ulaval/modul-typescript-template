@@ -60,7 +60,10 @@ module.exports = {
             },
             {
                 test: /\.ts$/,
-                use: 'awesome-typescript-loader'
+                loader: 'awesome-typescript-loader',
+                options: {
+                    configFileName: resolve('tsconfig.json')
+                }
             }
         ]
     },
