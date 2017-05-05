@@ -64,6 +64,16 @@ module.exports = {
                 options: {
                     configFileName: resolve('tsconfig.json')
                 }
+            },
+            {
+                test: /\.ts$/,
+                enforce: 'pre',
+                loader: 'tslint-loader',
+                include: [resolve('src'), resolve('tests')],
+                options: {
+                    formatter: 'grouped',
+                    formattersDirectory: 'node_modules/custom-tslint-formatters/formatters'
+                }
             }
         ]
     },

@@ -11,7 +11,7 @@
         "unit": "",
         "e2e": "",
         "test": "npm run unit && npm run e2e",
-        "tslint": ""
+        "tslint": "tslint -c conf/tslint.json -e 'src/**/*.d.ts' -e 'tests/unit/**/*.d.ts' -s node_modules/custom-tslint-formatters/formatters -t grouped 'src/**/*.ts' 'tests/unit/**/*.ts' 'tests/e2e/*.ts'"
     },
     "dependencies": {
         "vue": "^2.3.2",
@@ -37,7 +37,11 @@
         "vue-template-loader": "^0.3.1",
         "uglifyjs-webpack-plugin": "^0.4.3",
         "webpack": "^2.4.1",
-        "webpack-dev-server": "^2.4.5"
+        "webpack-dev-server": "^2.4.5",
+        "custom-tslint-formatters": "^2.1.0",
+        "tslint": "^5.1.0",
+        "tslint-config-standard": "^5.0.2",
+        "tslint-loader": "^3.5.3"
     },
     "repository": {
         "type": "git",

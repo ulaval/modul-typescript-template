@@ -1,14 +1,14 @@
-import Polyfills from './polyfills'
-import Vue from 'vue'
-import Test from './components/test/Test'
+import Polyfills from './polyfills';
+import Vue from 'vue';
+import Test from './components/test/Test';
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
-Vue.component('Test', Test)
+Vue.component('Test', Test);
 
 const vue = new Vue({
     template: '<Test/>'
-})
+});
 
-console.info('mount')
-vue.$mount('#vue')
+console.info('mount');
+vue.$mount('#vue');
