@@ -6,7 +6,7 @@ Promise.polyfill()
 // https://tc39.github.io/ecma262/#sec-array.prototype.find
 if (!Array.prototype['find']) {
     Object.defineProperty(Array.prototype, 'find', {
-        value: function(predicate) {
+        value: (...predicate: any[]) => {
             // 1. Let O be ? ToObject(this value).
             if (this == null) {
                 throw new TypeError('"this" is null or not defined')
@@ -23,7 +23,7 @@ if (!Array.prototype['find']) {
             }
 
             // 4. If thisArg was supplied, let T be thisArg else let T be undefined.
-            let thisArg = arguments[1]
+            let thisArg = predicate[1]
 
             // 5. Let k be 0.
             let k = 0
@@ -35,7 +35,7 @@ if (!Array.prototype['find']) {
                 // c. Let testResult be ToBoolean(? Call(predicate, T, « kValue, k, O »)).
                 // d. If testResult is true, return kValue.
                 let kValue = o[k]
-                if (predicate.call(thisArg, kValue, k, o)) {
+                if (predicate[0].call(thisArg, kValue, k, o)) {
                     return kValue
                 }
                 // e. Increase k by 1.
