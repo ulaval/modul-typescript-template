@@ -1,4 +1,8 @@
-// vue-template-loader (@see https://github.com/ktsn/vue-template-loader)
+/*
+vue-template-loader (@see https://github.com/ktsn/vue-template-loader)
+
+This file tells Typescript to understand import statements which loads css, html or scss files
+*/
 /* tslint:disable:interface-name no-duplicate-imports */
 declare module '*.html' {
     import Vue from 'vue'
