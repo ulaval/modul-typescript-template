@@ -5,13 +5,12 @@
             "*": ["src/*"]
         },
         "target": "es5",
-        "module": "amd",
+        "module": "es2015",
         "moduleResolution": "node",
         "experimentalDecorators": true,
         "allowSyntheticDefaultImports": true,
         "types": [
-            "node",
-            "vue"
+            "node"
         ],
         "typeRoots": [
             "node_modules/@types"
