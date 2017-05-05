@@ -10,8 +10,7 @@
         "experimentalDecorators": true,
         "allowSyntheticDefaultImports": true,
         "types": [
-            "node",
-            "vue"
+            "node"
         ],
         "typeRoots": [
             "node_modules/@types"
