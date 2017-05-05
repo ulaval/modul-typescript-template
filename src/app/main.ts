@@ -1,4 +1,4 @@
-import Polyfills from './polyfills'
+import './polyfills'
 import Vue from 'vue'
 import Page1 from './components/welcome/welcome'
 
