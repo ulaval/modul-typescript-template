@@ -1,13 +1,12 @@
 import './polyfills'
 import Vue from 'vue'
-import Page1 from './components/welcome/welcome'
+import router from './router'
 
 Vue.config.productionTip = false;
 
-Vue.component('Page1', Page1)
-
 const vue = new Vue({
-    template: '<page1/>'
+    router,
+    template: '<router-view/>'
 })
 
 vue.$mount('#vue')

@@ -8,6 +8,6 @@ import MyComp from '../commons/my-comp/my-comp'
 @Component({
     components: {MyComp}
 })
-export default class Page1 extends Vue {
+export default class Welcome extends Vue {
 
 }

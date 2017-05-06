@@ -5,7 +5,7 @@
     "author": "Frédéric Poliquin <frederic.poliquin@dti.ulaval.ca>",
     "scripts": {
         "clean": "rimraf dist",
-        "dev": "webpack-dev-server --config conf/webpack.config.js --content-base src --colors --port 5000 --open",
+        "dev": "webpack-dev-server --config conf/webpack.config.js --content-base src --colors --port 5000 --open --history-api-fallback",
         "build": "webpack --config conf/webpack.config.js --colors --optimize-minimize",
         "prod": "http-server dist -p 5000 -g -o",
         "unit": "",
