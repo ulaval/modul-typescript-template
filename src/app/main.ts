@@ -1,14 +1,12 @@
-import Polyfills from './polyfills';
+import './polyfills';
 import Vue from 'vue';
-import Test from './components/test/Test';
+import router from './router';
 
 Vue.config.productionTip = false;
 
-Vue.component('Test', Test);
-
 const vue = new Vue({
-    template: '<Test/>'
+    router,
+    template: '<router-view/>'
 });
 
-console.info('mount');
 vue.$mount('#vue');

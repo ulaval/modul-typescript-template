@@ -1,0 +1,10 @@
+{
+    "tagname-lowercase": true,
+    "attr-lowercase": true,
+    "attr-value-double-quotes": true,
+    "tag-pair": true,
+    "attr-no-duplication": true,
+    "spec-char-escape": true,
+    "alt-require": true,
+    "src-not-empty": true
+}
