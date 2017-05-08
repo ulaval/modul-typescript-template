@@ -1,15 +1,15 @@
-import Vue from 'vue';
+import Vue from "vue";
 
 Vue.config.productionTip = false;
 
-const crequire = (require as WebpackRequire);
+var crequire = require;
 
 // Polyfill fn.bind() for PhantomJS
 /* tslint:disable:no-var-requires */
-Function.prototype.bind = require('function-bind');
+Function.prototype.bind = require("function-bind");
 
 // require all test files (files that ends with .spec.js)
-const testsContext = crequire.context('./specs', true, /\.spec$/);
+var testsContext = crequire.context("./specs", true, /\.spec$/);
 testsContext.keys().forEach(testsContext);
 
 // require all src files except main.js and *.d.ts for coverage.
@@ -17,3 +17,4 @@ testsContext.keys().forEach(testsContext);
 // you want coverage for.
 // const srcContext = crequire.context("../../src", true, /^\.\/(?!(?:main|.*?\.d)(\.ts)?$)/)
 // srcContext.keys().forEach(srcContext)
+//# sourceMappingURL=index.js.map

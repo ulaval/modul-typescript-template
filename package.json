@@ -8,9 +8,10 @@
         "dev": "webpack-dev-server --config conf/webpack.config.js --content-base src --colors --port 5000 --open --history-api-fallback",
         "build": "webpack --config conf/webpack.config.js --colors --optimize-minimize",
         "prod": "http-server dist -p 5000 -g -o",
-        "unit": "karma start conf/karma.conf.js --single-run",
+        "unit": "karma start conf/karma.conf.js --browsers PhantomJS --single-run",
+        "unitall": "karma start conf/karma.conf.js --single-run",
         "e2e": "",
-        "test": "npm run unit && npm run e2e",
+        "test": "npm run unitall",
         "tslint": "tslint -c conf/tslint.json -e 'src/**/*.d.ts' -e 'tests/unit/**/*.d.ts' -s node_modules/custom-tslint-formatters/formatters -t grouped 'src/**/*.ts' 'tests/unit/**/*.ts' 'tests/e2e/*.ts'"
     },
     "dependencies": {
@@ -45,6 +46,8 @@
         "@types/jasmine": "^2.5.47",
         "jasmine-core": "^2.4.1",
         "karma": "^1.4.1",
+        "karma-chrome-launcher": "^2.1.1",
+        "karma-firefox-launcher": "^1.0.1",
         "karma-jasmine": "^0.3.6",
         "karma-phantomjs-launcher": "^1.0.2",
         "karma-spec-reporter": "0.0.26",
