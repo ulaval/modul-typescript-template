@@ -6,7 +6,7 @@ Vue.config.productionTip = false;
 
 const vue = new Vue({
     router,
-    template: '<router-view/>'
+    template: '<router-view></router-view>'
 });
 
 vue.$mount('#vue');
