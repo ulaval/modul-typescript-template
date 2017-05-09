@@ -26,12 +26,32 @@ Deletes all generated files.
 
 > npm run dev
 
-Runs the application development mode
+Runs the application development mode.
 
 > npm run build
 
-Builds the application for production. All files are put in the 'dist' folder
+Builds the application for production. All files are put in the 'dist' folder.
 
 > npm run prod
 
 Runs the application from the 'dist' folder. The build needs to be done before.
+
+> npm run unit
+
+Runs unit tests using PhantomJS with Karma + Jasmine.
+
+> npm run unitall
+
+Runs unit tests using PhantomJS, Chrome and Firefox with Karma + Jasmine.
+
+> npm run e2e
+
+Runs End-to-end tests using Nightwatch and Selenium.
+
+> npm run test
+
+Runs all unit and e2e tests.
+
+> nom run tslint
+
+Runs the Typescript linter using TSLint.
