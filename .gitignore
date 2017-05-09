@@ -1,3 +1,5 @@
 dist
 node_modules
 *.tgz
+tests/e2e/reports/*.xml
+tests/e2e/reports/selenium-debug.log

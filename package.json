@@ -10,7 +10,7 @@
         "prod": "http-server dist -p 5000 -g -o",
         "unit": "karma start conf/karma.conf.js --browsers PhantomJS --single-run",
         "unitall": "karma start conf/karma.conf.js --single-run",
-        "e2e": "",
+        "e2e": "node tests/e2e/index.js",
         "test": "npm run unitall",
         "tslint": "tslint -c conf/tslint.json -e 'src/**/*.d.ts' -e 'tests/unit/**/*.d.ts' -s node_modules/custom-tslint-formatters/formatters -t grouped 'src/**/*.ts' 'tests/unit/**/*.ts' 'tests/e2e/*.ts'"
     },
@@ -51,7 +51,12 @@
         "karma-jasmine": "^0.3.6",
         "karma-phantomjs-launcher": "^1.0.2",
         "karma-spec-reporter": "0.0.26",
-        "karma-webpack": "^2.0.2"
+        "karma-webpack": "^2.0.2",
+        "chromedriver": "^2.27.2",
+        "cross-spawn": "^5.0.1",
+        "nightwatch": "^0.9.12",
+        "npm-which": "^3.0.1",
+        "selenium-server": "^3.0.1"
     },
     "repository": {
         "type": "git",
