@@ -1,4 +1,3 @@
-const cp = require('child_process');
 const nightwatch = require('nightwatch');
 const path = require('path');
 const util = require('util');
