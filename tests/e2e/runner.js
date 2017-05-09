@@ -1,4 +1,5 @@
 const cp = require('child_process');
+const nightwatch = require('nightwatch');
 const path = require('path');
 const util = require('util');
 const webpack = require('webpack');
@@ -31,33 +32,14 @@ const getConfig = options => {
 module.exports = options => {
     const config = getConfig(options);
 
-    const startServer = callback => {
-        config.server.listen(config.port, '0.0.0.0', callback);
-    }
+    config.server.listen(config.port, '0.0.0.0', () => {
+        var nightwatchOptions = {
+            config: config.nightwatchConfig,
+            env: config.nightwatchEnv
+        };
 
-    const onServerStarted = seleniumChild => err => {
-        if (err) {
-            console.error(err.stack);
-            process.exit(1);
-        }
-
-        const args = [
-            '--config', config.nightwatchConfig,
-            '--env', config.nightwatchEnv
-        ];
-
-        var spawn = require('cross-spawn');
-
-        spawn('./node_modules/.bin/nightwatch', args, { stdio: 'inherit' })
-            .on('error', err2 => {
-                config.server.close();
-                throw err2;
-            })
-            .on('exit', code => {
-                config.server.close();
-                process.exit(code);
-            });
-    };
-
-    startServer(onServerStarted());
+        nightwatch.runner(nightwatchOptions, success => {
+            config.server.close();
+        });
+    });
 };
