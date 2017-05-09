@@ -1,7 +1,6 @@
 const cp = require('child_process');
 const path = require('path');
 const util = require('util');
-const npmWhich = require('npm-which');
 const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
 
