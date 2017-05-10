@@ -43,7 +43,8 @@ module.exports = {
                         options: {
                             plugins: function () {
                                 return [
-                                    require('autoprefixer')
+                                    //require('precss'),
+                                    //require('autoprefixer')
                                 ];
                             }
                         }
