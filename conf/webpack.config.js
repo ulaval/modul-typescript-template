@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CompressionPlugin = require("compression-webpack-plugin")
+const StyleLintPlugin = require('stylelint-webpack-plugin')
 const path = require("path")
 
 function resolve(dir) {
@@ -84,6 +85,10 @@ module.exports = {
             filename: 'index.html',
             template: resolve('src/index.html'),
             inject: 'body'
+        }),
+        new StyleLintPlugin({
+            configFile: 'conf/stylelint.config.js',
+            emitErrors: false
         }),
         new CompressionPlugin()
     ]
