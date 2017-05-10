@@ -72,6 +72,7 @@ module.exports = {
                 loader: 'tslint-loader',
                 include: [resolve('src'), resolve('tests')],
                 options: {
+                    configFile: 'conf/tslint.json',
                     formatter: 'grouped',
                     formattersDirectory: 'node_modules/custom-tslint-formatters/formatters'
                 }
