@@ -2,7 +2,7 @@
     "name": "@ulaval/vuejs-typescript-template",
     "version": "0.1.0",
     "description": "A Vue.js template for typescript",
-    "author": "Frédéric Poliquin <frederic.poliquin@dti.ulaval.ca>",
+    "author": "Philippe Rail <philippe.rail@dti.ulaval.ca>",
     "scripts": {
         "clean": "rimraf dist",
         "dev": "webpack-dev-server --config conf/webpack.config.js --content-base src --colors --port 5000 --open --history-api-fallback",
