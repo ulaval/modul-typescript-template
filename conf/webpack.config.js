@@ -88,7 +88,7 @@ module.exports = {
             inject: 'body'
         }),
         new StyleLintPlugin({
-            configFile: 'conf/stylelint.config.js',
+            configFile: 'conf/stylelint.json',
             emitErrors: false
         }),
         new CompressionPlugin()
