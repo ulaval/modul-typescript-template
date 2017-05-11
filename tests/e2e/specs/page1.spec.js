@@ -9,7 +9,7 @@ module.exports = {
             .url(devServer)
             .waitForElementVisible('#main', 5000)
             .assert.containsText('h1', 'Welcome to University Laval starter app!')
-            .assert.elementCount('p', 2)
+            .assert.elementCount('p', 3)
             .assert.elementCount('a', 1)
             .end();
     }
