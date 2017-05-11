@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CompressionPlugin = require("compression-webpack-plugin")
+const StyleLintPlugin = require('stylelint-webpack-plugin')
 const path = require("path")
 
 function resolve(dir) {
@@ -44,8 +45,7 @@ module.exports = {
                         options: {
                             plugins: function () {
                                 return [
-                                    //require('precss'),
-                                    //require('autoprefixer')
+                                    require('autoprefixer')
                                 ];
                             }
                         }
@@ -86,6 +86,10 @@ module.exports = {
             filename: 'index.html',
             template: resolve('src/index.html'),
             inject: 'body'
+        }),
+        new StyleLintPlugin({
+            configFile: 'conf/stylelint.config.js',
+            emitErrors: false
         }),
         new CompressionPlugin()
     ]
