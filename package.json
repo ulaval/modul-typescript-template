@@ -39,6 +39,7 @@
         "uglifyjs-webpack-plugin": "^0.4.3",
         "webpack": "^2.4.1",
         "webpack-dev-server": "^2.4.5",
+        "vuex": "^2.3.1",
         "custom-tslint-formatters": "^2.1.0",
         "tslint": "^5.1.0",
         "tslint-config-standard": "^5.0.2",

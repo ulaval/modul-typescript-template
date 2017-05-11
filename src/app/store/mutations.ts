@@ -1,0 +1,1 @@
+export const CHANGE_VALUE_MUTATION: string = 'CHANGE_VALUE_MUTATION';
