@@ -1,4 +1,9 @@
 <div>
     <p>This is a lazy loaded page.</p>
     <p>It should display a value from registered store module: {{ value }}</p>
+    <p>It should also display a bunch of values from the Github API about this repo</p>
+    <div v-if="isFetching">Fetching...</div>
+    <ul v-else>
+        <li v-for="item in repoItems" :key="item.is">{{item.url}}</li>
+    </ul>
 </div>
