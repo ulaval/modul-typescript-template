@@ -6,7 +6,7 @@ import MyComp from '../commons/my-comp/my-comp';
 
 @WithRender
 @Component({
-    components: {MyComp}
+    components: { MyComp }
 })
 export default class Welcome extends Vue {
 

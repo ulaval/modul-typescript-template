@@ -2,7 +2,7 @@ import Vue from 'vue';
 import Component from 'vue-class-component';
 import WithRender from './my-comp.html?style=./my-comp.scss';
 import { MyState } from '@/app/store/my-state';
-import { CHANGE_VALUE_MUTATION } from '@/app/store/mutations';
+import { ChangeValueMutation } from '@/app/store/mutations';
 
 @WithRender
 @Component
@@ -13,7 +13,7 @@ export default class MyComp extends Vue {
     public created() {
         this.timer = setInterval(() => {
             this.count++;
-            this.$store.commit(CHANGE_VALUE_MUTATION, this.count + '...');
+            this.$store.commit(ChangeValueMutation.TYPE, this.count + '...');
         }, 1000);
     }
 
@@ -22,6 +22,10 @@ export default class MyComp extends Vue {
     }
 
     public get value(): string {
-        return (this.$store.state as MyState).value1;
+        if (this.$store != null) {
+            return (this.$store.state as MyState).value1;
+        } else {
+            return '';
+        }
     }
 }

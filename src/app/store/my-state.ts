@@ -1,3 +1,5 @@
 export class MyState {
-    value1: string = 'value-0';
+    public value1: string = 'value-0';
 }
+
+export default new MyState();

@@ -1,18 +1,18 @@
-import Vuex from 'vuex';
-import { MyState } from './my-State';
-import { CHANGE_VALUE_MUTATION } from './mutations';
+import Vue from 'vue';
+import Vuex, { MutationTree } from 'vuex';
+import state, { MyState } from './my-State';
+import { ChangeValueMutation } from './mutations';
 
-const myState: MyState = new MyState();
+Vue.use(Vuex);
 
-export class Store {
-    public static createStore(): Vuex.Store<MyState> {
-        return new Vuex.Store<MyState>({
-            state: myState,
-            mutations: {
-                [CHANGE_VALUE_MUTATION](state: MyState, payload: string): void {
-                    state.value1 = 'value-' + payload;
-                }
-            }
-        });
-    }
-}
+const myState: MyState = state;
+const mutations: MutationTree<MyState> = {
+    [ChangeValueMutation.TYPE]: ChangeValueMutation.mutate
+};
+
+const store: Vuex.Store<MyState> = new Vuex.Store<MyState>({
+    state: myState,
+    mutations: mutations
+});
+
+export default store;

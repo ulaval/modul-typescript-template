@@ -1,3 +1,5 @@
 export class SubState {
-    value2: number = 0;
+    public value2: number = 0;
 }
+
+export default new SubState();
