@@ -9,6 +9,7 @@
         "moduleResolution": "node",
         "experimentalDecorators": true,
         "allowSyntheticDefaultImports": true,
+        "strictNullChecks": true,
         "types": [
             "node",
             "jasmine"
