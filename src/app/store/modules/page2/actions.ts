@@ -12,6 +12,7 @@ export class SubStateActions {
         context.commit(SubStateMutations.INIT_TYPE);
 
         setTimeout(() => {
+            // Should use a service implementation instead calling a REST service from here
             axios.get('https://api.github.com/users/ulaval/repos').then(value => {
                 context.commit(SubStateMutations.SUCCESS_TYPE, value);
             }, reason => {

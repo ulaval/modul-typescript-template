@@ -18,6 +18,11 @@
             true,
             "always"
         ],
+        "quotemark": [
+            true,
+            "single",
+            "avoid-escape"
+        ],
         "no-empty": false
     }
 }
