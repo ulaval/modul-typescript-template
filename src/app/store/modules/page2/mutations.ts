@@ -18,11 +18,13 @@ export class SubStateMutations {
 
     public static successMutation: Mutation<SubState> = (state: SubState, repo: any) => {
         state.githubRepo.isfectching = false;
+        state.githubRepo.lastError = undefined;
         state.githubRepo.repo = repo;
     }
 
     public static errorMutation: Mutation<SubState> = (state: SubState, reason: any) => {
         state.githubRepo.isfectching = false;
+        state.githubRepo.repo = undefined;
         state.githubRepo.lastError = reason;
     }
 }

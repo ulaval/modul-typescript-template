@@ -11,6 +11,9 @@ describe('Welcome component', () => {
         });
 
         const text: Element | null = vm.$el.querySelector('h1');
-        expect(text.textContent).toBe('Welcome to University Laval starter app!');
+        expect(text).toBeDefined();
+        if (text) {
+            expect(text.textContent).toBe('Welcome to University Laval starter app!');
+        }
     });
 });

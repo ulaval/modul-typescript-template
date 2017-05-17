@@ -29,16 +29,4 @@ export default class Page2 extends Vue {
     private get state(): SubState {
         return (this.$store.state.page2 as SubState);
     }
-
-    public get value(): number {
-        return this.state.value2;
-    }
-
-    public get isFetching(): boolean {
-        return this.state.githubRepo.isfectching;
-    }
-
-    public get repoItems(): any[] {
-        return this.state.githubRepo.repo.data;
-    }
 }
