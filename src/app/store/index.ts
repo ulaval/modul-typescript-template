@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Vuex, { MutationTree } from 'vuex';
-import { MyState } from './my-State';
+import { MyState } from './my-state';
 import { ChangeValueMutations } from './mutations';
 
 Vue.use(Vuex);

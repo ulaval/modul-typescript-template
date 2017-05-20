@@ -1,5 +1,5 @@
 import { Mutation } from 'vuex';
-import { MyState } from './my-State';
+import { MyState } from './my-state';
 
 export class ChangeValueMutations {
     public static TYPE: string = 'CHANGE_VALUE_MUTATION';
