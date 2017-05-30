@@ -7,7 +7,7 @@ function resolve(dir) {
     return path.join(__dirname, '..', dir)
 }
 
-module.exports = function(env) {
+module.exports = function (env) {
     var isProd = !!(env && env.prod);
 
     var config = {
@@ -82,7 +82,14 @@ module.exports = function(env) {
                         configFileName: resolve('tsconfig.json'),
                         useCache: true
                     }
-                }
+                },
+                {
+                    test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+                    loader: 'url-loader',
+                    options: {
+                        limit: 10000
+                    }
+                },
             ]
         },
         plugins: [

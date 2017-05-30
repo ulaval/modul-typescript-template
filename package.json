@@ -41,6 +41,7 @@
         "uglifyjs-webpack-plugin": "^0.4.3",
         "webpack": "^2.4.1",
         "webpack-dev-server": "^2.4.5",
+        "url-loader": "0.5.8",
         "vuex": "^2.3.1",
         "custom-tslint-formatters": "^2.1.0",
         "stylelint": "^7.10.1",
