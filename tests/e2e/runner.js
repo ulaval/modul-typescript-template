@@ -5,7 +5,7 @@ const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
 
 const createWebpackServer = config => {
-    const webpackConfig = require(config.webpackConfig);
+    const webpackConfig = require(config.webpackConfig)();
 
     return new WebpackDevServer(webpack(webpackConfig), { quiet: false });
 };
