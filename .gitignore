@@ -1,3 +1,4 @@
+.awcache
 dist
 node_modules
 *.tgz
