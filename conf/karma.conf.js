@@ -5,14 +5,16 @@
 
 var webpackConfig = require('./webpack.config');
 
+webpackConfig = webpackConfig();
+
 module.exports = function (config) {
     config.set({
         browsers: ['PhantomJS', 'Chrome', 'Firefox'],
         frameworks: ['jasmine'],
         reporters: ['spec'],
-        files: ['../tests/unit/index.js'],
+        files: ['../tests/unit.js'],
         preprocessors: {
-            '../tests/unit/index.js': ['webpack']
+            '../tests/unit.js': ['webpack']
         },
         webpack: webpackConfig,
         webpackMiddleware: {

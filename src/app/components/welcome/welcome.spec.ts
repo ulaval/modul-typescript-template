@@ -2,7 +2,7 @@ import Vue from 'vue';
 import Welcome from '@/app/components/welcome/welcome';
 
 describe('Welcome component', () => {
-    it('should render correct contents', () => {
+    it('Should render correct contents', () => {
         Vue.config.ignoredElements = ['router-link'];
 
         const vm = new Vue({
@@ -12,6 +12,7 @@ describe('Welcome component', () => {
 
         const text: Element | null = vm.$el.querySelector('h1');
         expect(text).toBeDefined();
+
         if (text) {
             expect(text.textContent).toBe('Welcome to University Laval starter app!');
         }
