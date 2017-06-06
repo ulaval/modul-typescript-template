@@ -12,7 +12,8 @@
         "strictNullChecks": true,
         "types": [
             "node",
-            "jasmine"
+            "jasmine",
+            "es6-promise"
         ],
         "typeRoots": [
             "node_modules/@types"
