@@ -52,9 +52,16 @@ module.exports = function (env) {
                                     ];
                                 }
                             }
-                        },
-                        'sass-loader'
+                        }
                     ]
+                },
+                {
+                    enforce: 'pre',
+                    test: /\.scss$/,
+                    loader: "sass-loader",
+                    options: {
+                        includePaths: ["./node_modules/modul-components/dist/styles"]
+                    }
                 },
                 {
                     test: /\.html$/,
