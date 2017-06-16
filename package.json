@@ -36,6 +36,7 @@
         "rimraf": "^2.6.1",
         "sass-loader": "^6.0.3",
         "style-loader": "^0.17.0",
+        "svg-inline-loader": "^0.7.1",
         "typescript": "^2.3.2",
         "uglify-js": "^2.8.22",
         "vue-template-compiler": "^2.3.3",

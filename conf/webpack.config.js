@@ -91,6 +91,15 @@ module.exports = function (env) {
                     }
                 },
                 {
+                    test: /\.svg$/,
+                    loader: 'svg-inline-loader',
+                    options: {
+                        removeTags: true,
+                        removingTags: ['desc', 'defs', 'style'],
+                        removeSVGTagAttrs: true
+                    }
+                },
+                {
                     test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
                     loader: 'url-loader',
                     options: {
