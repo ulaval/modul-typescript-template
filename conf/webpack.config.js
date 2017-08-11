@@ -60,7 +60,7 @@ module.exports = function (env) {
                     test: /\.scss$/,
                     loader: "sass-loader",
                     options: {
-                        includePaths: ["./node_modules/modul-components/dist/styles"]
+                        includePaths: ["./node_modules/@ulaval/modul-components/dist/styles"]
                     }
                 },
                 {
