@@ -16,8 +16,7 @@
         "tslint": "tslint -c conf/tslint.json -e 'src/**/*.d.ts' -e 'tests/unit/**/*.d.ts' -s node_modules/custom-tslint-formatters/formatters -t grouped 'src/**/*.ts' 'tests/unit/**/*.ts' 'tests/e2e/*.ts'",
         "stylelint": "stylelint \"src/**/*.css\" \"src/**/*.scss\" --config conf/stylelint.json"
     },
-    "dependencies": {
-    },
+    "dependencies": {},
     "devDependencies": {
         "@types/node": "^7.0.16",
         "@types/es6-promise": "^0.0.32",
@@ -40,12 +39,12 @@
         "webpack": "^2.4.1",
         "webpack-dev-server": "^2.4.5",
         "url-loader": "^0.5.8",
-        "vue": "~2.4.0",
-        "vue-class-component": "^5.0.1",
-        "vue-router": "~2.7.0",
-        "vue-template-compiler": "~2.4.0",
+        "vue": "~2.5.0",
+        "vue-class-component": "^6.0.0",
+        "vue-router": "~3.0.0",
+        "vue-template-compiler": "~2.5.0",
         "vue-template-loader": "^0.3.1",
-        "vuex": "^2.3.1",
+        "vuex": "^3.0.0",
         "custom-tslint-formatters": "^2.1.0",
         "stylelint": "^7.10.1",
         "stylelint-config-standard": "^16.0.0",
