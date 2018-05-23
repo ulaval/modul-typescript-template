@@ -3,6 +3,8 @@ Template to start a new project with [Vuejs](https://vuejs.org/) and [Typescript
 
 This project aims at kickstarting projects at University Laval but could also help others. Feel free to try it out and send us some feedback.
 
+> This repo is outdated (for the moment!). Please try this [fork instead](https://github.com/simardo/vuejs-typescript-template).
+
 ## Getting started
 1. Install [Git](https://git-scm.com/)
 1. Install [Node](https://nodejs.org/)
