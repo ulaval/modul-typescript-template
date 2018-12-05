@@ -1,8 +1,0 @@
-node_modules
-src
-conf
-tests
-.npmignore
-.vscode
-.htmlhintrc
-*.tgz
