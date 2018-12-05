@@ -1,0 +1,31 @@
+{
+    "editor.detectIndentation": false,
+    "files.trimTrailingWhitespace": true,
+    "editor.tabSize": 4,
+    "files.insertFinalNewline": true,
+    "stylelint.enable": true,
+    "css.validate": false,
+    "less.validate": false,
+    "scss.validate": false,
+    "tslint.configFile": "tslint.json",
+    "tslint.autoFixOnSave": true,
+    "typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+    "files.exclude": {
+        "**/.circleci/": true,
+        "**/.github/": true,
+    },
+    "search.exclude": {
+        "package-lock.json": true,
+    },
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+    },
+    "html.format.wrapLineLength": 0,
+    "html.format.wrapAttributes": "force-aligned",
+    "typescript.updateImportsOnFileMove.enabled": "prompt",
+    "jshint.options": {
+        "esversion": 6
+    }
+
+}
