@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`HelloWord should render correctly 1`] = `
-<div class="hello-world">
+<div class="m-welcome-page-body">
   <h1>test hello world</h1>
   <p>
     For guide and recipes on how to configure / customize this project,<br>
