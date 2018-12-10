@@ -1,6 +1,6 @@
 {
     "name": "@ulaval/modul-typescript-template",
-    "version": "1.0.0",
+    "version": "0.0.1",
     "description": "A Vue.js template for typescript provided by Université Laval",
     "contributors": [
         "Charles Maheu <charles.maheu@dti.ulaval.ca>",
