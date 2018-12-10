@@ -1,0 +1,50 @@
+{
+    "extends": "tslint-config-standard",
+    "linterOptions": {
+        "exclude": [
+            "node_modules/**"
+        ]
+    },
+    "rules": {
+        "await-promise": false,
+        "no-use-before-declare": false,
+        "return-undefined": false,
+        "no-floating-promises": false,
+        "no-unnecessary-qualifier": false,
+        "strict-type-predicates": false,
+        "indent": [
+            true,
+            "spaces"
+        ],
+        "triple-equals": false,
+        "ter-indent": [
+            true,
+            4,
+            {
+                "SwitchCase": 1
+            }
+        ],
+        "space-before-function-paren": [
+            true,
+            {
+                "anonymous": "never",
+                "named": "never",
+                "asyncArrow": "always",
+                "method": "never",
+                "constructor": "never"
+            }
+        ],
+        "semicolon": [
+            true,
+            "always"
+        ],
+        "quotemark": [
+            true,
+            "single",
+            "avoid-escape"
+        ],
+        "no-empty": false,
+        "no-debugger": true,
+        "no-null-keyword": false
+    }
+}
