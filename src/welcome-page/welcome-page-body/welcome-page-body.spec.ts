@@ -1,6 +1,6 @@
 import { createLocalVue, mount, Wrapper } from '@vue/test-utils';
 import Vue, { VueConstructor } from 'vue';
-import HelloWorld from './hello-world';
+import HelloWorld from './welcome-page-body';
 
 describe('HelloWord', () => {
     let localVue: VueConstructor<Vue>;
