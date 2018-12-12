@@ -1,17 +1,10 @@
-<div class="m-main-layout">
-    <header>
-        <slot name="header">
-            <img alt="Vue logo"
-                 src="../../assets/logo.png" />
-        </slot>
-    </header>
-    <main>
-        <slot name="main"></slot>
-    </main>
-    <footer>
-        <slot name="footer">
-            <router-link :to="{name: 'WelcomePage'}">Home</router-link>
-            <router-link :to="{name: 'AboutPage'}">About</router-link>
-        </slot>
+<m-template class="m-main-layout">
+    <img slot="header"
+         alt="Vue logo"
+         src="../../assets/logo.png" />
+    <slot name="main"></slot>
+    <footer slot="footer">
+        <m-link url="/">Home</m-link>
+        <m-link url="/about">About</m-link>
     </footer>
-</div>
+</m-template>

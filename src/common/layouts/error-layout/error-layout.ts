@@ -1,11 +1,12 @@
-import MMainLayout from '@/common/layouts/main-layout/main-layout';
+import { MPanel } from '@ulaval/modul-components/dist/components/panel/panel';
+import { MTemplate } from '@ulaval/modul-components/dist/components/template/template';
 import Vue from 'vue';
 import { Component } from 'vue-property-decorator';
 import WithRender from './error-layout.html';
 
 @WithRender
 @Component({
-    components: { MMainLayout }
+    components: { MTemplate, MPanel }
 })
 export default class MErrorLayout extends Vue {
 }

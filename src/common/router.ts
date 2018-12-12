@@ -23,7 +23,7 @@ export default new Router({
         },
         {
             path: '*',
-            name: 'AboutPage',
+            name: '404',
             component: NotFound
         }
     ]
