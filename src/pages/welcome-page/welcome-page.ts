@@ -1,4 +1,4 @@
-import MainLayout from '@/common/main-layout/main-layout';
+import MainLayout from '@/common/layouts/main-layout/main-layout';
 import Vue from 'vue';
 import Component from 'vue-class-component';
 import WelcomePageBody from './welcome-page-body/welcome-page-body';

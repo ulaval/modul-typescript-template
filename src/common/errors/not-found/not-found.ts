@@ -1,6 +1,6 @@
+import MErrorLayout from '@/common/layouts/error-layout/error-layout';
 import Vue from 'vue';
 import { Component } from 'vue-property-decorator';
-import MErrorLayout from '../error-layout/error-layout';
 import WithRender from './not-found.html';
 
 @WithRender
