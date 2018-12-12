@@ -9,6 +9,9 @@
         <slot name="main"></slot>
     </main>
     <footer>
-        <slot name="footer"></slot>
+        <slot name="footer">
+            <router-link :to="{name: 'WelcomePage'}">Home</router-link>
+            <router-link :to="{name: 'AboutPage'}">About</router-link>
+        </slot>
     </footer>
 </div>

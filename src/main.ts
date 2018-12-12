@@ -3,20 +3,16 @@ import '@ulaval/modul-components/dist/styles/main.scss';
 import '@ulaval/modul-components/dist/utils/polyfills';
 import Vue from 'vue';
 import ModulPlugin from './common/modul';
-import WelcomePage from './welcome-page/welcome-page';
+import Root from './common/root/root';
+import router from './common/router';
 
 Vue.config.productionTip = false;
 
 Vue.use(ModulPlugin);
 
-const bootstrap = (h: any) => h('div', {
-    attrs: {
-        class: 'm-u--app-body'
-    }
-}, [h(WelcomePage)]);
-
 const vue = new Vue({
-    render: bootstrap // (h) => h(WelcomePage)
+    router,
+    render: (h: any) => h(Root)
 });
 
 vue.$mount('#app');

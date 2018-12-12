@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import { Component } from 'vue-property-decorator';
-import WithRender from './main-layout.html';
+import WithRender from './root.html';
 
 @WithRender
 @Component
-export default class MMainLayout extends Vue {
+export default class Root extends Vue {
 }
