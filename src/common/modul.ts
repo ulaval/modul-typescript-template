@@ -3,8 +3,7 @@ import AccordionGroupPlugin from '@ulaval/modul-components/dist/components/accor
 import AccordionPlugin from '@ulaval/modul-components/dist/components/accordion/accordion';
 import ButtonPlugin from '@ulaval/modul-components/dist/components/button/button';
 import FrenchPlugin from '@ulaval/modul-components/dist/lang/fr';
-import UtilsPlugin from '@ulaval/modul-components/dist/utils';
-import FRENCH from '@ulaval/modul-components/dist/utils/i18n/i18n';
+import { FRENCH, UtilsPlugin } from '@ulaval/modul-components/dist/utils';
 import DefaultSpritesPlugin from '@ulaval/modul-components/dist/utils/svg/default-sprites';
 import Vue, { PluginObject } from 'vue';
 
@@ -14,7 +13,7 @@ const ModulPlugin: PluginObject<any> = {
 
         Vue.use(UtilsPlugin,
             {
-                propagateVueParserErrors: true, i18PluginOptions: { curLang: FRENCH }
+                propagateVueParserErrors: false, i18PluginOptions: { curLang: FRENCH }
             }); // propagateVueError to console and use french
 
         Vue.use(FrenchPlugin);
