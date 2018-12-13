@@ -1,8 +1,19 @@
-<m-template class="m-main-layout">
-    <main-header></main-header>
-    <slot></slot>
-    <footer slot="footer">
-        <m-link url="/">Home</m-link>
-        <m-link url="/about">About</m-link>
+<article>
+    <header>
+        <slot name="header">
+            <main-header></main-header>
+        </slot>
+    </header>
+    <main>
+        <slot></slot>
+    </main>
+    <footer>
+        <slot name="footer">
+            <div style="display: flex; justify-content: center;">
+                <m-link url="/">Home</m-link>
+                &nbsp;
+                <m-link url="/about">About</m-link>
+            </div>
+        </slot>
     </footer>
-</m-template>
+</article>

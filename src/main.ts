@@ -2,7 +2,9 @@
 import MAccordionGroupPlugin from '@ulaval/modul-components/dist/components/accordion-group/accordion-group';
 import MAccordionPlugin from '@ulaval/modul-components/dist/components/accordion/accordion';
 import MButtonPlugin from '@ulaval/modul-components/dist/components/button/button';
+import MDropdownPlugin from '@ulaval/modul-components/dist/components/dropdown/dropdown';
 import MErrorPageNotFoundPlugin from '@ulaval/modul-components/dist/components/error-page-not-found/error-page-not-found';
+import MFlexTemplatePlugin from '@ulaval/modul-components/dist/components/flex-template/flex-template';
 import MI18nPlugin from '@ulaval/modul-components/dist/components/i18n/i18n';
 import MFrenchPlugin from '@ulaval/modul-components/dist/lang/fr';
 import '@ulaval/modul-components/dist/styles/main.scss';
@@ -23,6 +25,8 @@ Vue.use(MAccordionGroupPlugin);
 Vue.use(MAccordionPlugin);
 Vue.use(MButtonPlugin);
 Vue.use(MErrorPageNotFoundPlugin);
+Vue.use(MDropdownPlugin);
+Vue.use(MFlexTemplatePlugin);
 
 const vue = new Vue({
     router,
