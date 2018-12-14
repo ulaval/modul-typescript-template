@@ -6,9 +6,9 @@ import MDropdownPlugin from '@ulaval/modul-components/dist/components/dropdown/d
 import MErrorPageNotFoundPlugin from '@ulaval/modul-components/dist/components/error-page-not-found/error-page-not-found';
 import MFlexTemplatePlugin from '@ulaval/modul-components/dist/components/flex-template/flex-template';
 import MI18nPlugin from '@ulaval/modul-components/dist/components/i18n/i18n';
-import MFrenchPlugin from '@ulaval/modul-components/dist/lang/fr';
+import MI18nFilterPlugin from '@ulaval/modul-components/dist/filters/i18n/i18n';
 import '@ulaval/modul-components/dist/styles/main.scss';
-import MUtilsPlugin, { FRENCH } from '@ulaval/modul-components/dist/utils';
+import MUtilsPlugin, { ENGLISH, FRENCH } from '@ulaval/modul-components/dist/utils';
 import '@ulaval/modul-components/dist/utils/polyfills';
 import MDefaultSpritesPlugin from '@ulaval/modul-components/dist/utils/svg/default-sprites';
 import Vue from 'vue';
@@ -17,10 +17,12 @@ import router from './common/router';
 
 Vue.config.productionTip = false;
 
-Vue.use(MUtilsPlugin, { propagateVueParserErrors: false, i18PluginOptions: { curLang: FRENCH } }); // propagateVueError to console and use french
-Vue.use(MFrenchPlugin);
+const curLang = localStorage.getItem('lang') || FRENCH;
+
+Vue.use(MUtilsPlugin, { propagateVueParserErrors: false, i18PluginOptions: { curLang } }); // propagateVueError to console and use french
 Vue.use(MDefaultSpritesPlugin);
 Vue.use(MI18nPlugin);
+Vue.use(MI18nFilterPlugin);
 Vue.use(MAccordionGroupPlugin);
 Vue.use(MAccordionPlugin);
 Vue.use(MButtonPlugin);
@@ -28,9 +30,20 @@ Vue.use(MErrorPageNotFoundPlugin);
 Vue.use(MDropdownPlugin);
 Vue.use(MFlexTemplatePlugin);
 
-const vue = new Vue({
-    router,
-    render: (h: any) => h(Root)
-});
+let langPromise;
 
-vue.$mount('#app');
+if (curLang == ENGLISH) {
+    langPromise = import(/* webpackChunkName: "en" */ '@/lang/en');
+} else {
+    langPromise = import(/* webpackChunkName: "fr" */ '@/lang/fr');
+}
+
+langPromise.then((langPlugin: any) => {
+    Vue.use(langPlugin.default);
+    const vue = new Vue({
+        router,
+        render: (h: any) => h(Root)
+    });
+
+    vue.$mount('#app');
+});

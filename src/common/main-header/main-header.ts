@@ -5,6 +5,7 @@ import { MLink } from '@ulaval/modul-components/dist/components/link/link';
 import { MPanel } from '@ulaval/modul-components/dist/components/panel/panel';
 import { MPopper } from '@ulaval/modul-components/dist/components/popper/popper';
 import { MTemplate } from '@ulaval/modul-components/dist/components/template/template';
+import { ENGLISH } from '@ulaval/modul-components/dist/utils/i18n/i18n';
 import Vue from 'vue';
 import { Component } from 'vue-property-decorator';
 import WithRender from './main-header.html?style=./main-header.scss';
@@ -16,4 +17,14 @@ import WithRender from './main-header.html?style=./main-header.scss';
 export default class MainHeader extends Vue {
 
     private navOpened: boolean = false;
+
+    public onEnglish() {
+        localStorage.setItem('lang', ENGLISH);
+        window.location.reload();
+    }
+
+    public onFrench() {
+        localStorage.removeItem('lang');
+        window.location.reload();
+    }
 }
