@@ -17,12 +17,7 @@
         "inspect": "vue inspect",
         "upgrade": "vue upgrade"
     },
-    "dependencies": {
-        "@ulaval/modul-components": "^1.0.0-beta.71",
-        "vue": "^2.5.20",
-        "vue-router": "^3.0.2",
-        "vuex": "^3.0.1"
-    },
+    "dependencies": {},
     "devDependencies": {
         "@types/jest": "^23.3.10",
         "@vue/cli-plugin-babel": "^3.2.0",
@@ -30,6 +25,7 @@
         "@vue/cli-plugin-unit-jest": "^3.2.0",
         "@vue/cli-service": "^3.2.0",
         "@vue/test-utils": "^1.0.0-beta.27",
+        "@ulaval/modul-components": "^1.0.0-beta.71",
         "babel-core": "7.0.0-bridge.0",
         "compression-webpack-plugin": "^2.0.0",
         "custom-tslint-formatters": "^2.4.0",
@@ -46,10 +42,13 @@
         "tslint-config-standard": "^8.0.1",
         "tslint-loader": "^3.5.4",
         "typescript": "^3.2.2",
+        "vue": "^2.5.20",
         "vue-class-component": "^6.0.0",
         "vue-property-decorator": "^7.0.0",
+        "vue-router": "^3.0.2",
         "vue-template-compiler": "^2.5.20",
-        "vue-template-loader": "^1.0.0"
+        "vue-template-loader": "^1.0.0",
+        "vuex": "^3.0.1"
     },
     "license": "Apache-2.0"
 }

@@ -2,11 +2,9 @@
 
 exports[`WelcomePage should render correctly 1`] = `
 <main-layout-stub class="m-welcome-page">
-  <h1>Welcome</h1>
+  <h1>welcome:welcome</h1>
   <p>
-    For guide and recipes on how to configure / customize this project,<br>
-    check out the
-    <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
+    <m-i18n k="welcome:intro" html-encode="false"></m-i18n>
   </p>
   <p>
     <m-button-stub type="button" skin="primary" iconposition="left" iconsize="12px">
