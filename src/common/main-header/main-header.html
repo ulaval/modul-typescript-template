@@ -5,9 +5,6 @@
              src="../../assets/logo.png" />
     </m-link>
 
-    <m-button @click="onEnglish();">English</m-button>
-    <m-button @click="onFrench();">French</m-button>
-
     <m-popper :open="navOpened"
               close-on-click-outside="true"
               class="main-header__profile"
@@ -29,4 +26,8 @@
             </li>
         </ul>
     </m-popper>
+
+    <m-button class="main-header__lang"
+              skin="secondary"
+              @click="onToggleLang();">{{ toggleLangLabel }}</m-button>
 </div>

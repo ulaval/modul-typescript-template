@@ -1,13 +1,8 @@
 <main-layout class="m-welcome-page">
-    <h1>
-        <m-i18n i18n-key="welcome:welcome"></m-i18n>{{ 'welcome:welcome' | f-m-i18n }}
-    </h1>
+    <h1>{{ 'welcome:welcome' | f-m-i18n }}</h1>
     <p>
-        For guide and recipes on how to configure / customize this project,<br />
-        check out the
-        <a href="https://cli.vuejs.org"
-           target="_blank"
-           rel="noopener">vue-cli documentation</a>.
+        <m-i18n k="welcome:intro"
+                html-encode="false"></m-i18n>
     </p>
     <p>
         <m-button>

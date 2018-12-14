@@ -4,7 +4,19 @@ import { PluginObject } from 'vue';
 
 const messages = {
     'welcome': {
-        'welcome': 'Welcome'
+        'welcome': 'Welcome',
+        'intro': 'For guide and recipes on how to configure / customize this project, check out the <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.'
+    },
+    'm-error-page-not-found': {
+        'title': 'Page not found',
+        'home-label': 'Back to home',
+        'hint.primary': 'Your page may have been removed or changed. Please check your URL.'
+    },
+    'm-accordion-group': {
+        'open-all': 'Open All'
+    },
+    'm-accordion': {
+        'open': 'Open'
     }
 };
 
