@@ -17,6 +17,11 @@ export default new Router({
             component: () => import(/* webpackChunkName: "welcome" */ '../pages/welcome-page/welcome-page')
         },
         {
+            path: '/todos',
+            name: 'TodolistPage',
+            component: () => import(/* webpackChunkName: "todolist" */ '../pages/todolist-page/todolist-page')
+        },
+        {
             path: '/about',
             name: 'AboutPage',
             component: () => import(/* webpackChunkName: "about" */ '../pages/about-page/about-page')

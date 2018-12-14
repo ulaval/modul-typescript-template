@@ -6,6 +6,9 @@ const messages = {
     'welcome': {
         'welcome': 'Bienvenue',
         'intro': 'Pour personnaliser ce projet, consulter la documentation du projet <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli</a>.'
+    },
+    'todolist': {
+        'welcome': 'Gestion des tâches à faire'
     }
 };
 

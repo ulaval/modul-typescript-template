@@ -7,6 +7,9 @@ const messages = {
         'welcome': 'Welcome',
         'intro': 'For guide and recipes on how to configure / customize this project, check out the <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.'
     },
+    'todolist': {
+        'welcome': 'TODO management'
+    },
     'm-error-page-not-found': {
         'title': 'Page not found',
         'home-label': 'Back to home',
