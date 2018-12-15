@@ -4,7 +4,6 @@ import MAccordionPlugin from '@ulaval/modul-components/dist/components/accordion
 import MButtonPlugin from '@ulaval/modul-components/dist/components/button/button';
 import MDropdownPlugin from '@ulaval/modul-components/dist/components/dropdown/dropdown';
 import MErrorPageNotFoundPlugin from '@ulaval/modul-components/dist/components/error-page-not-found/error-page-not-found';
-import MFlexTemplatePlugin from '@ulaval/modul-components/dist/components/flex-template/flex-template';
 import MI18nPlugin from '@ulaval/modul-components/dist/components/i18n/i18n';
 import MI18nFilterPlugin from '@ulaval/modul-components/dist/filters/i18n/i18n';
 import '@ulaval/modul-components/dist/styles/main.scss';
@@ -12,8 +11,10 @@ import MUtilsPlugin, { ENGLISH, FRENCH } from '@ulaval/modul-components/dist/uti
 import '@ulaval/modul-components/dist/utils/polyfills';
 import MDefaultSpritesPlugin from '@ulaval/modul-components/dist/utils/svg/default-sprites';
 import Vue from 'vue';
+import Vuex from 'vuex';
 import Root from './common/root/root';
 import router from './common/router';
+import services from './common/services';
 
 Vue.config.productionTip = false;
 
@@ -28,7 +29,13 @@ Vue.use(MAccordionPlugin);
 Vue.use(MButtonPlugin);
 Vue.use(MErrorPageNotFoundPlugin);
 Vue.use(MDropdownPlugin);
-Vue.use(MFlexTemplatePlugin);
+Vue.use(Vuex);
+
+const store = new Vuex.Store({
+    strict: process.env.NODE_ENV !== 'production'
+});
+
+Vue.use(services, { store });
 
 let langPromise;
 
@@ -40,7 +47,9 @@ if (curLang == ENGLISH) {
 
 langPromise.then((langPlugin: any) => {
     Vue.use(langPlugin.default);
+
     const vue = new Vue({
+        store,
         router,
         render: (h: any) => h(Root)
     });

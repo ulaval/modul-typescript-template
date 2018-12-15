@@ -1,0 +1,17 @@
+<section>
+    <template v-if="state.loading">
+        Chargement en cours...
+    </template>
+    <template v-else-if="state.loadingError">
+        Erreur de chargement !
+    </template>
+    <template v-else>
+        <h1>{{ 'todolist:welcome' | f-m-i18n }} - {{state.todolist.todolistName }}</h1>
+
+        <m-button @click="$emit('new-todo');">Nouvelle tâche</m-button>
+
+        <m-table>
+
+        </m-table>
+    </template>
+</section>
