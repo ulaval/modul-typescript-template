@@ -1,17 +1,27 @@
 <section>
     <template v-if="state.loading">
-        Chargement en cours...
+        Loading...
     </template>
     <template v-else-if="state.loadingError">
-        Erreur de chargement !
+        Unable to load todos...
     </template>
     <template v-else>
         <h1>{{ 'todolist:welcome' | f-m-i18n }} - {{state.todolist.todolistName }}</h1>
 
         <m-button @click="$emit('new-todo');">Nouvelle tâche</m-button>
 
-        <m-table>
+        <m-table :columns="columns"
+                 :rows="state.visibleTodos">
 
+            <template slot="body.dueDate"
+                      slot-scope="{ data }">
+                <span v-html="$options.filters.formatDate(data.dueDate)"></span>
+            </template>
+
+            <template slot="body.status"
+                      slot-scope="{ data }">
+                <m-i18n :k="'todolist:status-' + data.status"></m-i18n>
+            </template>
         </m-table>
     </template>
 </section>

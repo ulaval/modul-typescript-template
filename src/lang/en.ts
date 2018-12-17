@@ -8,7 +8,11 @@ const messages = {
         'intro': 'For guide and recipes on how to configure / customize this project, check out the <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.'
     },
     'todolist': {
-        'welcome': 'TODO management'
+        'welcome': 'TODO management',
+        'status-open': 'Open',
+        'status-in_progress': 'In progress',
+        'status-done': 'Done',
+        'status-wont_complete': 'Cancelled'
     },
     'm-error-page-not-found': {
         'title': 'Page not found',
@@ -20,6 +24,9 @@ const messages = {
     },
     'm-accordion': {
         'open': 'Open'
+    },
+    'm-table': {
+        'empty-table': 'No data available'
     }
 };
 

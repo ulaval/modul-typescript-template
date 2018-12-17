@@ -1,18 +1,25 @@
 
 declare namespace Todolist {
-    type TodoStatus = 'open' | 'in_progress' | 'done' | 'wontcomplete';
+    type TodoStatus = 'open' | 'in_progress' | 'done' | 'wont_complete';
 
     interface Todo {
-        idTodo: string,
-        idTodolist: string,
-        titreTodo: string,
-        descriptionTodo: string,
-        dateDue: Date,
-        statut: TodoStatus
+        todoId: string,
+        todolistId: string,
+        title: string,
+        description: string,
+        dueDate?: Date,
+        status: TodoStatus
     }
 
     interface Todolist {
         todolistId: string;
         todolistName: string;
+    }
+
+    interface TodolistState {
+        loading: boolean;
+        loadingError: boolean;
+        todolist?: Todolist;
+        visibleTodos: Todo[];
     }
 }

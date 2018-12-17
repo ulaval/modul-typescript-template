@@ -1,22 +1,15 @@
 import { Action, ModuleBase, Mutation } from '@ulaval/modul-vuex/dist/vuex-annotations';
 import { Store } from 'vuex';
 
-export class TodolistState {
-    loading = false;
-    loadingError = false;
-    todolist?: Todolist.Todolist;
-    visibleTodos: Todolist.Todo[] = [];
-}
-
 export class TodolistModuleState {
     todos: { [k: string]: Todolist.Todo } = {};
 
-    todolists: { [k: string]: TodolistState } = {};
+    todolists: { [k: string]: Todolist.TodolistState } = {};
 }
 
 export interface TodolistRepository {
     loadTodolist(todolistId: string): Promise<Todolist.Todolist>;
-    searchTodos(todolistId: string, lastTodolistId: string, pageSize: number): Promise<Todolist.Todo[]>;
+    searchTodos(todolistId: string, lastTodolistId?: string, pageSize?: number): Promise<Todolist.Todo[]>;
     addTodo(todo: Todolist.Todo): Promise<Todolist.Todo>;
     updateTodo(todo: Todolist.Todo): Promise<Todolist.Todo>;
     deleteTodo(todo: Todolist.Todo): Promise<Todolist.Todo>;
@@ -31,7 +24,7 @@ export class TodolistService extends ModuleBase<TodolistModuleState> {
         console.info('YES');
     }
 
-    public getTodolistState(todolistId: string): TodolistState | undefined {
+    public getTodolistState(todolistId: string): Todolist.TodolistState | undefined {
         return this.state.todolists[todolistId];
     }
 
@@ -41,8 +34,9 @@ export class TodolistService extends ModuleBase<TodolistModuleState> {
 
         try {
             const todolist = await this.todolistRepository.loadTodolist(todolistId);
+            const visibleTodos = await this.todolistRepository.searchTodos(todolistId);
 
-            this.setTodoList(todolist);
+            this.updateTodoListState(todolist, visibleTodos);
         } catch (e) {
             this.setLoadingTodoList(todolistId, false, e);
             throw e;
@@ -74,11 +68,11 @@ export class TodolistService extends ModuleBase<TodolistModuleState> {
         let todolistState = this.state.todolists[todolistId];
 
         if (!todolistState) {
-            todolistState = new TodolistState();
+            todolistState = newTodolistState();
             this.state.todolists[todolistId] = todolistState;
         }
 
-        this.setLoading(todolistState, loading);
+        setLoading(todolistState, loading);
 
         if (error) {
             todolistState.loadingError = true;
@@ -86,22 +80,31 @@ export class TodolistService extends ModuleBase<TodolistModuleState> {
     }
 
     @Mutation()
-    private setTodoList(todolist: Todolist.Todolist) {
-        const current = this.getTodolistState(todolist.todolistId);
+    private updateTodoListState(todolist: Todolist.Todolist, visibleTodos: Todolist.Todo[]) {
+        let currentState = this.getTodolistState(todolist.todolistId);
 
-        if (current) {
-            current.todolist = todolist;
-            this.setLoading(current, false);
+        if (currentState) {
+            currentState.todolist = todolist;
         } else {
-            const newTodolistState = new TodolistState();
-            this.setLoading(newTodolistState, false);
-            newTodolistState.todolist = todolist;
-            this.state.todolists[todolist.todolistId] = newTodolistState;
+            currentState = newTodolistState();
+            currentState.todolist = todolist;
+            this.state.todolists[todolist.todolistId] = currentState;
         }
-    }
 
-    private setLoading(todolistState: TodolistState, loading: boolean) {
-        todolistState.loading = loading;
-        todolistState.loadingError = false;
+        currentState.visibleTodos = visibleTodos;
+        setLoading(currentState, false);
     }
+}
+
+function setLoading(todolistState: Todolist.TodolistState, loading: boolean) {
+    todolistState.loading = loading;
+    todolistState.loadingError = false;
+}
+
+export function newTodolistState(): Todolist.TodolistState {
+    return {
+        loading: false,
+        loadingError: false,
+        visibleTodos: []
+    };
 }

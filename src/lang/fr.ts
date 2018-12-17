@@ -8,7 +8,11 @@ const messages = {
         'intro': 'Pour personnaliser ce projet, consulter la documentation du projet <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli</a>.'
     },
     'todolist': {
-        'welcome': 'Gestion des tâches à faire'
+        'welcome': 'Gestion des tâches à faire',
+        'status-open': 'Ouvert',
+        'status-in_progress': 'En cours',
+        'status-done': 'Complété',
+        'status-wont_complete': 'Ne sera pas complété'
     }
 };
 
