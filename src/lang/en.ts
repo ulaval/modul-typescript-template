@@ -27,6 +27,10 @@ const messages = {
     },
     'm-table': {
         'empty-table': 'No data available'
+    },
+    'f-m-date': {
+        'long': '[$]Do[$] MMMM YYYY',
+        'short': '[$]Do[$] MMM YYYY'
     }
 };
 
