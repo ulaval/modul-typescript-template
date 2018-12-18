@@ -13,7 +13,7 @@ import MDefaultSpritesPlugin from '@ulaval/modul-components/dist/utils/svg/defau
 import Vue from 'vue';
 import Vuex from 'vuex';
 import appConfig from './common/app-config';
-import Root from './common/root/root';
+import Root from './common/components/root/root';
 import router from './common/router';
 
 Vue.config.productionTip = false;

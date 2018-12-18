@@ -1,6 +1,6 @@
+import NotFound from '@/common/components/errors/not-found/not-found';
 import Vue from 'vue';
 import Router from 'vue-router';
-import NotFound from './errors/not-found/not-found';
 
 Vue.use(Router);
 

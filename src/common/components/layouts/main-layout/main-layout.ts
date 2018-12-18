@@ -1,4 +1,4 @@
-import MainHeader from '@/common/main-header/main-header';
+import MainHeader from '@/common/components/main-header/main-header';
 import { MLink } from '@ulaval/modul-components/dist/components/link/link';
 import Vue from 'vue';
 import { Component } from 'vue-property-decorator';

@@ -1,4 +1,4 @@
-import MainLayout from '@/common/layouts/main-layout/main-layout';
+import MainLayout from '@/common/components/layouts/main-layout/main-layout';
 import { MAccordionGroup } from '@ulaval/modul-components/dist/components/accordion-group/accordion-group';
 import { MAccordion } from '@ulaval/modul-components/dist/components/accordion/accordion';
 import { MButton } from '@ulaval/modul-components/dist/components/button/button';
