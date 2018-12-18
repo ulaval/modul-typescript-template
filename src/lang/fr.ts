@@ -4,6 +4,8 @@ import { PluginObject } from 'vue';
 
 const messages = {
     'welcome': {
+        'modul': 'modul',
+        'tagline': 'Une expérience unifiée',
         'welcome': 'Bienvenue',
         'intro': 'Pour personnaliser ce projet, consulter la documentation du projet <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli</a>.'
     },
