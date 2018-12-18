@@ -10,9 +10,8 @@ describe('WelcomePage', () => {
     });
 
     it('should render correctly', () => {
-        expect(true).toBeTruthy();
 
-        const rdo = shallowMount(WelcomePage, { localVue: localVue });
+        const rdo = shallowMount(WelcomePage, { localVue });
 
         return expect(rdo.html()).toMatchSnapshot();
     });

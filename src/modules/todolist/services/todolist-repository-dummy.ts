@@ -1,6 +1,5 @@
-import { TodolistRepository } from './todolist-service';
 
-export class TodolistRepositoryDummy implements TodolistRepository {
+export class TodolistRepositoryDummy implements Todolist.TodolistRepository {
     private dummyData: { [k: string]: Todolist.Todolist } = {
         '1': {
             todolistId: '1',

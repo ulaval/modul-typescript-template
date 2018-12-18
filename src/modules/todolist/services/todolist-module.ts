@@ -1,23 +1,12 @@
 import { Action, ModuleBase, Mutation } from '@ulaval/modul-vuex/dist/vuex-annotations';
 import { Store } from 'vuex';
 
-export class TodolistModuleState {
-    todos: { [k: string]: Todolist.Todo } = {};
-
-    todolists: { [k: string]: Todolist.TodolistState } = {};
-}
-
-export interface TodolistRepository {
-    loadTodolist(todolistId: string): Promise<Todolist.Todolist>;
-    searchTodos(todolistId: string, lastTodolistId?: string, pageSize?: number): Promise<Todolist.Todo[]>;
-    addTodo(todo: Todolist.Todo): Promise<Todolist.Todo>;
-    updateTodo(todo: Todolist.Todo): Promise<Todolist.Todo>;
-    deleteTodo(todo: Todolist.Todo): Promise<Todolist.Todo>;
-}
-
-export class TodolistService extends ModuleBase<TodolistModuleState> {
-    constructor(private todolistRepository: TodolistRepository, store: Store<any>, moduleName = 'TodolistService') {
-        super(moduleName, new TodolistModuleState(), store);
+export class TodolistModule extends ModuleBase<Todolist.TodolistModuleState> {
+    constructor(private todolistRepository: Todolist.TodolistRepository, store: Store<any>, moduleName = 'TodolistService') {
+        super(moduleName, {
+            todolists: {},
+            todos: {}
+        }, store);
     }
 
     public onNewTodo() {
@@ -101,7 +90,7 @@ function setLoading(todolistState: Todolist.TodolistState, loading: boolean) {
     todolistState.loadingError = false;
 }
 
-export function newTodolistState(): Todolist.TodolistState {
+function newTodolistState(): Todolist.TodolistState {
     return {
         loading: false,
         loadingError: false,

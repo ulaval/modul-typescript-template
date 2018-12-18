@@ -2,7 +2,7 @@ import Vue from 'vue';
 import Component from 'vue-class-component';
 import { Prop, Watch } from 'vue-property-decorator';
 import TodolistListView from '../../components/todolist-listview/todolist-listview';
-import { newTodolistState, TodolistService } from '../../services/todolist-service';
+import { TodolistModule } from '../../services/todolist-module';
 import WithRender from './todolist.html';
 
 @WithRender
@@ -14,9 +14,9 @@ export default class Todolist extends Vue {
     todolistId!: string;
 
     @Prop()
-    todolistService!: TodolistService;
+    todolistService!: TodolistModule;
 
-    state = newTodolistState();
+    state: boolean | Todolist.TodolistState = false;
 
     created() {
         this.loadTodolistId(this.todolistId);

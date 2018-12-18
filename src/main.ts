@@ -12,9 +12,9 @@ import '@ulaval/modul-components/dist/utils/polyfills';
 import MDefaultSpritesPlugin from '@ulaval/modul-components/dist/utils/svg/default-sprites';
 import Vue from 'vue';
 import Vuex from 'vuex';
+import appConfig from './common/app-config';
 import Root from './common/root/root';
 import router from './common/router';
-import services from './common/services';
 
 Vue.config.productionTip = false;
 
@@ -35,7 +35,7 @@ const store = new Vuex.Store({
     strict: process.env.NODE_ENV !== 'production'
 });
 
-Vue.use(services, { store });
+Vue.use(appConfig, { store });
 
 let langPromise;
 

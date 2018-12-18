@@ -16,6 +16,10 @@ export default class TodolistListView extends Vue {
     @Prop()
     state!: Todolist.TodolistState;
 
+    onAddNewTodo() {
+        this.$emit('new-todo');
+    }
+
     columns: MColumnTable[] = [
         {
             id: 'title',

@@ -1,2 +1,3 @@
-<todolist-list-view :state="state"
+<todolist-list-view v-if="state"
+                    :state="state"
                     @new-todo="todolistService.onNewTodo()"></todolist-list-view>
