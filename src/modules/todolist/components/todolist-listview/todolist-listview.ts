@@ -1,13 +1,15 @@
+import { MModal } from '@ulaval/modul-components/dist/components/modal/modal';
 import { MColumnTable, MTable } from '@ulaval/modul-components/dist/components/table/table';
 import { dateFilter } from '@ulaval/modul-components/dist/filters/date/date';
 import Vue from 'vue';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
+import TodolistForm from '../todolist-form/todolist-form';
 import WithRender from './todolist-listview.html';
 
 @WithRender
 @Component({
-    components: { MTable },
+    components: { MTable, MModal, TodolistForm },
     filters: {
         formatDate: (date: Date | undefined) => date ? dateFilter(date) : ''
     }

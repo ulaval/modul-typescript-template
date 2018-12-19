@@ -1,10 +1,11 @@
-
 import MAccordionGroupPlugin from '@ulaval/modul-components/dist/components/accordion-group/accordion-group';
 import MAccordionPlugin from '@ulaval/modul-components/dist/components/accordion/accordion';
 import MButtonPlugin from '@ulaval/modul-components/dist/components/button/button';
 import MDropdownPlugin from '@ulaval/modul-components/dist/components/dropdown/dropdown';
 import MErrorPageNotFoundPlugin from '@ulaval/modul-components/dist/components/error-page-not-found/error-page-not-found';
 import MI18nPlugin from '@ulaval/modul-components/dist/components/i18n/i18n';
+import MIconButtonPlugin from '@ulaval/modul-components/dist/components/icon-button/icon-button';
+import MModalPlugin from '@ulaval/modul-components/dist/components/modal/modal';
 import MI18nFilterPlugin from '@ulaval/modul-components/dist/filters/i18n/i18n';
 import '@ulaval/modul-components/dist/styles/main.scss';
 import MUtilsPlugin, { ENGLISH, FRENCH } from '@ulaval/modul-components/dist/utils';
@@ -24,6 +25,8 @@ Vue.use(MUtilsPlugin, { propagateVueParserErrors: false, i18PluginOptions: { cur
 Vue.use(MDefaultSpritesPlugin);
 Vue.use(MI18nPlugin);
 Vue.use(MI18nFilterPlugin);
+Vue.use(MIconButtonPlugin);
+Vue.use(MModalPlugin);
 Vue.use(MAccordionGroupPlugin);
 Vue.use(MAccordionPlugin);
 Vue.use(MButtonPlugin);

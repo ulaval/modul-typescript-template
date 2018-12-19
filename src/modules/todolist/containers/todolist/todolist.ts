@@ -14,7 +14,7 @@ export default class Todolist extends Vue {
     todolistId!: string;
 
     @Prop()
-    todolistService!: TodolistModule;
+    todolistModule!: TodolistModule;
 
     state: boolean | Todolist.TodolistState = false;
 
@@ -24,7 +24,7 @@ export default class Todolist extends Vue {
 
     @Watch('todolistId')
     loadTodolistId(todolistId: string) {
-        this.todolistService.loadTodolist(todolistId);
-        this.state = this.todolistService.getTodolistState(this.todolistId)!;
+        this.todolistModule.loadTodolist(todolistId);
+        this.state = this.todolistModule.getTodolistState(this.todolistId)!;
     }
 }

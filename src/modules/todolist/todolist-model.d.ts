@@ -1,6 +1,7 @@
 
 declare namespace Todolist {
     type TodoStatus = 'open' | 'in_progress' | 'done' | 'wont_complete';
+    type FormMode = 'new' | 'edit';
 
     interface Todo {
         todoId: string,
@@ -16,9 +17,16 @@ declare namespace Todolist {
         todolistName: string;
     }
 
+    interface TodolistFormState {
+        open: boolean;
+        mode: FormMode;
+        todo: Todo;
+    }
+
     interface TodolistState {
         loading: boolean;
         loadingError: boolean;
+        todolistFormState: TodolistFormState;
         todolist?: Todolist;
         visibleTodos: Todo[];
     }

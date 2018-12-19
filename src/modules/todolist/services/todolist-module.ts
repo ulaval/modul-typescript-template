@@ -9,8 +9,22 @@ export class TodolistModule extends ModuleBase<Todolist.TodolistModuleState> {
         }, store);
     }
 
-    public onNewTodo() {
-        console.info('YES');
+    @Mutation()
+    public onOpenForm(todolistState: Todolist.TodolistState, mode: Todolist.FormMode = 'new') {
+        todolistState.todolistFormState = newTodolistFormState();
+        todolistState.todolistFormState.open = true;
+        todolistState.todolistFormState.mode = mode;
+    }
+
+    @Mutation()
+    public onConfirmForm(state: Todolist.TodolistState, todo: Todolist.Todo) {
+        state.visibleTodos.push(todo);
+        state.todolistFormState = newTodolistFormState();
+    }
+
+    @Mutation()
+    public onCloseForm(state: Todolist.TodolistState) {
+        state.todolistFormState = newTodolistFormState();
     }
 
     public getTodolistState(todolistId: string): Todolist.TodolistState | undefined {
@@ -90,10 +104,25 @@ function setLoading(todolistState: Todolist.TodolistState, loading: boolean) {
     todolistState.loadingError = false;
 }
 
+function newTodolistFormState(): Todolist.TodolistFormState {
+    return {
+        open: false,
+        mode: 'new',
+        todo: {
+            todoId: '-1',
+            todolistId: '-1',
+            description: '',
+            status: 'open',
+            title: ''
+        }
+    };
+}
+
 function newTodolistState(): Todolist.TodolistState {
     return {
         loading: false,
         loadingError: false,
+        todolistFormState: newTodolistFormState(),
         visibleTodos: []
     };
 }

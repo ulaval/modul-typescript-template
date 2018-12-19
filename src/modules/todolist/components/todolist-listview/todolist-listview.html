@@ -8,7 +8,7 @@
     <template v-else>
         <h1>{{ 'todolist:welcome' | f-m-i18n }} - {{state.todolist.todolistName }}</h1>
 
-        <m-button @click="onAddNewTodo();">Nouvelle tâche</m-button>
+        <m-button @click="$emit('open-new-form', state)">Nouvelle tâche</m-button>
 
         <m-table :columns="columns"
                  :rows="state.visibleTodos">
@@ -24,4 +24,8 @@
             </template>
         </m-table>
     </template>
+
+    <todolist-form v-if="state.todolistFormState.open"
+                   :state="state.todolistFormState"
+                   v-on="$listeners"></todolist-form>
 </section>

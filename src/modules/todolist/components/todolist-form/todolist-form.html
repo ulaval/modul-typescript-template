@@ -1,0 +1,12 @@
+<m-modal :title="state.mode == 'new' ? 'New' : 'Edit'"
+         :open="state.open"
+         @close="$emit('close-form', state);">
+    <section>
+        Title: <m-textfield v-model="title"></m-textfield>
+        <br />
+        Description: <m-textfield v-model="description"></m-textfield>
+
+        <m-button @click="onConfirm()">Ok</m-button>
+        <m-button @click="$emit('close-form');">Cancel</m-button>
+    </section>
+</m-modal>
