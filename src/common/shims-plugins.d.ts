@@ -1,4 +1,4 @@
-import { TodolistModule } from '@/modules/todolist/services/todolist-module';
+import { TodolistModule } from '@/todolist/services/todolist-module';
 
 declare module 'vue/types/vue' {
     interface Vue {
