@@ -1,0 +1,20 @@
+<m-dialog class="m-u--margin-top"
+          aria-hidden="true"
+          :title="title"
+          :open="open">
+
+    <p v-html="text"></p>
+
+    <template slot="footer">
+        <div class="confirmation__footer">
+            <m-button ref="btnConfirmer"
+                      :full-size="true"
+                      @click="onConfirm()">{{ confirmMsg }}</m-button>
+            <m-button ref="btnAnnuler"
+                      :full-size="true"
+                      class="m-u--margin-top"
+                      @click="onCancel()"
+                      skin="secondary">{{ cancelMsg }}</m-button>
+        </div>
+    </template>
+</m-dialog>

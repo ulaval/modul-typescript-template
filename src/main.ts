@@ -1,6 +1,7 @@
 import MAccordionGroupPlugin from '@ulaval/modul-components/dist/components/accordion-group/accordion-group';
 import MAccordionPlugin from '@ulaval/modul-components/dist/components/accordion/accordion';
 import MButtonPlugin from '@ulaval/modul-components/dist/components/button/button';
+import MDialogPlugin from '@ulaval/modul-components/dist/components/dialog/dialog';
 import MDropdownPlugin from '@ulaval/modul-components/dist/components/dropdown/dropdown';
 import MErrorPageNotFoundPlugin from '@ulaval/modul-components/dist/components/error-page-not-found/error-page-not-found';
 import MI18nPlugin from '@ulaval/modul-components/dist/components/i18n/i18n';
@@ -26,6 +27,7 @@ const curLang = localStorage.getItem('lang') || FRENCH;
 
 Vue.use(MUtilsPlugin, { propagateVueParserErrors: false, i18PluginOptions: { curLang } }); // propagateVueError to console and use french
 Vue.use(MDefaultSpritesPlugin);
+Vue.use(MDialogPlugin);
 Vue.use(MI18nPlugin);
 Vue.use(MI18nFilterPlugin);
 Vue.use(MIconButtonPlugin);

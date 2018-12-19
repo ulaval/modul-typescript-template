@@ -3,7 +3,7 @@ declare namespace Todolist {
     type TodoStatus = 'open' | 'in_progress' | 'done' | 'wont_complete';
     type FormMode = 'new' | 'edit';
 
-    interface Todo {
+    type Todo = {
         todoId: string,
         todolistId: string,
         title: string,

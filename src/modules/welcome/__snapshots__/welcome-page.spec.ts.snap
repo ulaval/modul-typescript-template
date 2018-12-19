@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`WelcomePage should render correctly 1`] = `
-<main-layout-stub class="welcome-page">
+<section>
   <section class="welcome-page-headline">
     <article class="welcome-page-headline__body">
       <div>
@@ -52,5 +52,5 @@ exports[`WelcomePage should render correctly 1`] = `
       </m-accordion-group-stub>
     </p>
   </section>
-</main-layout-stub>
+</section>
 `;

@@ -2,7 +2,7 @@ import { MTextfield } from '@ulaval/modul-components/dist/components/textfield/t
 import { dateFilter } from '@ulaval/modul-components/dist/filters/date/date';
 import Vue from 'vue';
 import Component from 'vue-class-component';
-import { Prop } from 'vue-property-decorator';
+import { Emit, Prop } from 'vue-property-decorator';
 import WithRender from './todolist-form.html';
 
 @WithRender
@@ -16,14 +16,16 @@ export default class TodolistForm extends Vue {
     @Prop()
     state!: Todolist.TodolistFormState;
 
+    @Emit('confirm-form')
+    emitConfirmForm(todo: Todolist.Todo) {
+    }
+
+    @Emit('close-form')
+    emitCloseForm() {
+    }
+
     title: string = '';
     description: string = '';
-
-    /*@Watch('state.open')
-    onOpen() {
-        this.title = '';
-        this.description = '';
-    }*/
 
     onConfirm() {
         const todo: Todolist.Todo = {
@@ -34,6 +36,10 @@ export default class TodolistForm extends Vue {
             status: 'open'
         };
 
-        this.$emit('confirm-form', todo);
+        this.emitConfirmForm(todo);
+    }
+
+    onClose() {
+        this.emitCloseForm();
     }
 }

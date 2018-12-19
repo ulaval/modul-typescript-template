@@ -3,7 +3,7 @@
 .main-layout {
     min-height: 100%;
     display: grid;
-    grid-template-rows: minmax(70px, auto) 1fr auto;
+    grid-template-rows: minmax(75px, auto) 1fr auto;
     grid-template-columns: 100%;
 
     &__footer {

@@ -3,15 +3,19 @@ import Vue from 'vue';
 import { Store } from 'vuex';
 
 export class TodolistModule extends ModuleBase<Todolist.TodolistModuleState> {
-    constructor(private todolistRepository: Todolist.TodolistRepository, store: Store<any>, moduleName = 'TodolistService') {
+    constructor(private todolistRepository: Todolist.TodolistRepository, store: Store<any>, moduleName = 'Todolist') {
         super(moduleName, {
             todolists: {},
             todos: {}
         }, store);
     }
 
+    public getTodolistState(todolistId: string): Todolist.TodolistState | undefined {
+        return this.state.todolists[todolistId];
+    }
+
     @Mutation()
-    public onOpenForm(todolistState: Todolist.TodolistState, mode: Todolist.FormMode = 'new') {
+    public onOpenNewForm(todolistState: Todolist.TodolistState, mode: Todolist.FormMode = 'new') {
         todolistState.todolistFormState = newTodolistFormState();
         todolistState.todolistFormState.open = true;
         todolistState.todolistFormState.mode = mode;
@@ -32,19 +36,14 @@ export class TodolistModule extends ModuleBase<Todolist.TodolistModuleState> {
     public onDeleteTodo(state: Todolist.TodolistState, todo: Todolist.Todo) {
         const index = state.visibleTodos.findIndex(val => val === todo);
 
-        console.info(index);
-
         if (index >= 0) {
             Vue.delete(state.visibleTodos, index);
         }
     }
 
-    public getTodolistState(todolistId: string): Todolist.TodolistState | undefined {
-        return this.state.todolists[todolistId];
-    }
-
     @Action()
     public async loadTodolist(todolistId: string): Promise<void> {
+
         this.setLoadingTodoList(todolistId, true);
 
         try {
@@ -84,7 +83,7 @@ export class TodolistModule extends ModuleBase<Todolist.TodolistModuleState> {
 
         if (!todolistState) {
             todolistState = newTodolistState();
-            this.state.todolists[todolistId] = todolistState;
+            Vue.set(this.state.todolists, todolistId, todolistState);
         }
 
         setLoading(todolistState, loading);

@@ -3,6 +3,10 @@ import { ENGLISH } from '@ulaval/modul-components/dist/utils/i18n/i18n';
 import { PluginObject } from 'vue';
 
 const messages = {
+    'common': {
+        'confirm': 'Ok',
+        'cancel': 'Cancel'
+    },
     'welcome': {
         'modul': 'modul',
         'tagline': 'a unified experience',

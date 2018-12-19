@@ -8,7 +8,7 @@
     <template v-else>
         <h1>{{ 'todolist:welcome' | f-m-i18n }} - {{state.todolist.todolistName }}</h1>
 
-        <m-button @click="$emit('open-new-form', state)">Nouvelle tâche</m-button>
+        <m-button @click="onOpenNewForm()">Nouvelle tâche</m-button>
 
         <m-table :columns="columns"
                  :rows="state.visibleTodos">
@@ -27,10 +27,16 @@
                       slot-scope="{ data }">
                 <m-option>
                     <m-option-item-edit></m-option-item-edit>
-                    <m-option-item-delete @click="$emit('delete-todo', data)"></m-option-item-delete>
+                    <m-option-item-delete @click="onDeleteTodo(data)"></m-option-item-delete>
                 </m-option>
             </template>
         </m-table>
+
+        <confirmation title="Confirmation"
+                      text="Are you sure ?"
+                      :open="deleteConfirmationOpen"
+                      @confirm="onConfirmDeleteTodo()"
+                      @cancel="onCancelDeleteTodo()"></confirmation>
     </template>
 
     <todolist-form v-if="state.todolistFormState.open"
