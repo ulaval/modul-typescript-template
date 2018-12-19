@@ -1,8 +1,8 @@
 import ComponentsFrenchPlugin from '@ulaval/modul-components/dist/lang/fr';
-import { ENGLISH } from '@ulaval/modul-components/dist/utils/i18n/i18n';
-import { PluginObject } from 'vue';
+import { BundleMessagesMap, ENGLISH } from '@ulaval/modul-components/dist/utils/i18n/i18n';
+import { PluginObject, VueConstructor } from 'vue';
 
-const messages = {
+const messages: BundleMessagesMap = {
     'common': {
         'confirm': 'Ok',
         'cancel': 'Cancel'
@@ -41,7 +41,7 @@ const messages = {
 };
 
 const EnglishPlugin: PluginObject<any> = {
-    install(v, options) {
+    install(v: VueConstructor): void {
         v.use(ComponentsFrenchPlugin);
         v.prototype.$i18n.addMessages(ENGLISH, messages);
     }

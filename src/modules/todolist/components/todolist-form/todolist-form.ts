@@ -9,7 +9,7 @@ import WithRender from './todolist-form.html';
 @Component({
     components: { MTextfield },
     filters: {
-        formatDate: (date: Date | undefined) => date ? dateFilter(date) : ''
+        formatDate: (date: Date | undefined): string => date ? dateFilter(date) : ''
     }
 })
 export default class TodolistForm extends Vue {
@@ -17,17 +17,17 @@ export default class TodolistForm extends Vue {
     state!: Todolist.TodolistFormState;
 
     @Emit('confirm-form')
-    emitConfirmForm(todo: Todolist.Todo) {
+    emitConfirmForm(todo: Todolist.Todo): void {
     }
 
     @Emit('close-form')
-    emitCloseForm() {
+    emitCloseForm(): void {
     }
 
     title: string = '';
     description: string = '';
 
-    onConfirm() {
+    onConfirm(): void {
         const todo: Todolist.Todo = {
             todoId: '-1',
             todolistId: '-1',
@@ -39,7 +39,7 @@ export default class TodolistForm extends Vue {
         this.emitConfirmForm(todo);
     }
 
-    onClose() {
+    onClose(): void {
         this.emitCloseForm();
     }
 }

@@ -12,16 +12,16 @@ export default class Todolist extends Vue {
     @Prop()
     todolistId!: string;
 
-    created() {
+    created(): void {
         this.loadTodolistId();
     }
 
     @Watch('todolistId')
-    loadTodolistId() {
+    loadTodolistId(): void {
         this.$todolistModule.loadTodolist(this.todolistId);
     }
 
-    get state() {
+    get state(): Todolist.TodolistState | undefined {
         return this.$todolistModule.getTodolistState(this.todolistId);
     }
 }

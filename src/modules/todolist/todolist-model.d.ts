@@ -32,9 +32,9 @@ declare namespace Todolist {
     }
 
     interface TodolistModuleState {
-        todos: { [k: string]: Todolist.Todo };
+        todos: { [k: string]: Todolist.Todo | undefined };
 
-        todolists: { [k: string]: Todolist.TodolistState };
+        todolists: { [k: string]: Todolist.TodolistState | undefined };
     }
 
     interface TodolistRepository {

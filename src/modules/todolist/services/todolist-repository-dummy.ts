@@ -1,3 +1,4 @@
+import Todolist from '../containers/todolist/todolist';
 
 export class TodolistRepositoryDummy implements Todolist.TodolistRepository {
     private dummyData: { [k: string]: Todolist.Todolist } = {
@@ -12,9 +13,9 @@ export class TodolistRepositoryDummy implements Todolist.TodolistRepository {
     };
 
     loadTodolist(todolistId: string): Promise<Todolist.Todolist> {
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve: any, reject: any): void => {
             setTimeout(() => {
-                const list = this.dummyData[todolistId];
+                const list: Todolist.Todolist = this.dummyData[todolistId];
 
                 if (!list) {
                     reject(new Error(`List ${todolistId} does not exist.`));
@@ -57,7 +58,7 @@ export class TodolistRepositoryDummy implements Todolist.TodolistRepository {
                 status: 'wont_complete'
             }
         ] as Todolist.Todo[])
-            .filter(todo => todo.todolistId === todolistId);
+            .filter((todo: Todolist.Todo) => todo.todolistId === todolistId);
     }
 
     addTodo(todo: Todolist.Todo): Promise<Todolist.Todo> {

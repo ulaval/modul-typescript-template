@@ -1,4 +1,4 @@
-import { createLocalVue, shallowMount } from '@vue/test-utils';
+import { createLocalVue, shallowMount, Wrapper } from '@vue/test-utils';
 import Vue, { VueConstructor } from 'vue';
 import WelcomePage from './welcome-page';
 
@@ -11,7 +11,7 @@ describe('WelcomePage', () => {
 
     it('should render correctly', () => {
 
-        const rdo = shallowMount(WelcomePage, { localVue });
+        const rdo: Wrapper<WelcomePage> = shallowMount(WelcomePage, { localVue });
 
         return expect(rdo.html()).toMatchSnapshot();
     });

@@ -12,7 +12,7 @@ import WithRender from './todolist-listview.html';
 @Component({
     components: { MTable, MModal, TodolistForm, Confirmation },
     filters: {
-        formatDate: (date: Date | undefined) => date ? dateFilter(date) : ''
+        formatDate: (date: Date | undefined): string => date ? dateFilter(date) : ''
     }
 })
 export default class TodolistListView extends Vue {
@@ -20,18 +20,18 @@ export default class TodolistListView extends Vue {
     state!: Todolist.TodolistState;
 
     @Emit('open-new-form')
-    emitOpenNewForm() {
+    emitOpenNewForm(): void {
     }
 
     @Emit('new-todo')
-    emitNewTodo() {
+    emitNewTodo(): void {
     }
 
     @Emit('delete-todo')
-    emitDeleteTodo(todo: Todolist.Todo) {
+    emitDeleteTodo(todo: Todolist.Todo): void {
     }
 
-    deleteConfirmationOpen = false;
+    deleteConfirmationOpen: boolean = false;
     currentTodo?: Todolist.Todo;
 
     columns: MColumnTable[] = [
@@ -62,23 +62,23 @@ export default class TodolistListView extends Vue {
         }
     ];
 
-    onOpenNewForm() {
+    onOpenNewForm(): void {
         this.emitOpenNewForm();
     }
 
-    onDeleteTodo(todo: Todolist.Todo) {
+    onDeleteTodo(todo: Todolist.Todo): void {
         this.currentTodo = todo;
         this.deleteConfirmationOpen = true;
     }
 
-    onConfirmDeleteTodo() {
+    onConfirmDeleteTodo(): void {
         if (this.currentTodo) {
             this.emitDeleteTodo(this.currentTodo);
         }
         this.deleteConfirmationOpen = false;
     }
 
-    onCancelDeleteTodo() {
+    onCancelDeleteTodo(): void {
         this.deleteConfirmationOpen = false;
     }
 }

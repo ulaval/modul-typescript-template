@@ -16,14 +16,14 @@ import MUtilsPlugin, { ENGLISH, FRENCH } from '@ulaval/modul-components/dist/uti
 import '@ulaval/modul-components/dist/utils/polyfills';
 import MDefaultSpritesPlugin from '@ulaval/modul-components/dist/utils/svg/default-sprites';
 import Vue from 'vue';
-import Vuex from 'vuex';
+import Vuex, { Store } from 'vuex';
 import appConfig from './common/app-config';
 import Root from './common/components/root/root';
 import router from './common/router';
 
 Vue.config.productionTip = false;
 
-const curLang = localStorage.getItem('lang') || FRENCH;
+const curLang: string = localStorage.getItem('lang') || FRENCH;
 
 Vue.use(MUtilsPlugin, { propagateVueParserErrors: false, i18PluginOptions: { curLang } }); // propagateVueError to console and use french
 Vue.use(MDefaultSpritesPlugin);
@@ -42,13 +42,13 @@ Vue.use(MErrorPageNotFoundPlugin);
 Vue.use(MDropdownPlugin);
 Vue.use(Vuex);
 
-const store = new Vuex.Store({
+const store: Store<any> = new Vuex.Store({
     strict: process.env.NODE_ENV !== 'production'
 });
 
 Vue.use(appConfig, { store });
 
-let langPromise;
+let langPromise: Promise<any>;
 
 if (curLang == ENGLISH) {
     langPromise = import(/* webpackChunkName: "en" */ '@/lang/en');
@@ -59,10 +59,10 @@ if (curLang == ENGLISH) {
 langPromise.then((langPlugin: any) => {
     Vue.use(langPlugin.default);
 
-    const vue = new Vue({
+    const vue: Vue = new Vue({
         store,
         router,
-        render: (h: any) => h(Root)
+        render: (h: any): any => h(Root)
     });
 
     vue.$mount('#app');

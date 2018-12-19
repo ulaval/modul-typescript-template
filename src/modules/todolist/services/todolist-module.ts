@@ -3,7 +3,7 @@ import Vue from 'vue';
 import { Store } from 'vuex';
 
 export class TodolistModule extends ModuleBase<Todolist.TodolistModuleState> {
-    constructor(private todolistRepository: Todolist.TodolistRepository, store: Store<any>, moduleName = 'Todolist') {
+    constructor(private todolistRepository: Todolist.TodolistRepository, store: Store<any>, moduleName: string = 'Todolist') {
         super(moduleName, {
             todolists: {},
             todos: {}
@@ -15,26 +15,26 @@ export class TodolistModule extends ModuleBase<Todolist.TodolistModuleState> {
     }
 
     @Mutation()
-    public onOpenNewForm(todolistState: Todolist.TodolistState, mode: Todolist.FormMode = 'new') {
+    public onOpenNewForm(todolistState: Todolist.TodolistState, mode: Todolist.FormMode = 'new'): void {
         todolistState.todolistFormState = newTodolistFormState();
         todolistState.todolistFormState.open = true;
         todolistState.todolistFormState.mode = mode;
     }
 
     @Mutation()
-    public onConfirmForm(state: Todolist.TodolistState, todo: Todolist.Todo) {
+    public onConfirmForm(state: Todolist.TodolistState, todo: Todolist.Todo): void {
         state.visibleTodos.push(todo);
         state.todolistFormState = newTodolistFormState();
     }
 
     @Mutation()
-    public onCloseForm(state: Todolist.TodolistState) {
+    public onCloseForm(state: Todolist.TodolistState): void {
         state.todolistFormState = newTodolistFormState();
     }
 
     @Mutation()
-    public onDeleteTodo(state: Todolist.TodolistState, todo: Todolist.Todo) {
-        const index = state.visibleTodos.findIndex(val => val === todo);
+    public onDeleteTodo(state: Todolist.TodolistState, todo: Todolist.Todo): void {
+        const index: number = state.visibleTodos.findIndex((val: Todolist.Todo) => val === todo);
 
         if (index >= 0) {
             Vue.delete(state.visibleTodos, index);
@@ -47,8 +47,8 @@ export class TodolistModule extends ModuleBase<Todolist.TodolistModuleState> {
         this.setLoadingTodoList(todolistId, true);
 
         try {
-            const todolist = await this.todolistRepository.loadTodolist(todolistId);
-            const visibleTodos = await this.todolistRepository.searchTodos(todolistId);
+            const todolist: Todolist.Todolist = await this.todolistRepository.loadTodolist(todolistId);
+            const visibleTodos: Todolist.Todo[] = await this.todolistRepository.searchTodos(todolistId);
 
             this.updateTodoListState(todolist, visibleTodos);
         } catch (e) {
@@ -78,8 +78,8 @@ export class TodolistModule extends ModuleBase<Todolist.TodolistModuleState> {
     }
 
     @Mutation()
-    private setLoadingTodoList(todolistId: string, loading: boolean, error: any = null) {
-        let todolistState = this.state.todolists[todolistId];
+    private setLoadingTodoList(todolistId: string, loading: boolean, error: any = null): void {
+        let todolistState: Todolist.TodolistState | undefined = this.state.todolists[todolistId];
 
         if (!todolistState) {
             todolistState = newTodolistState();
@@ -94,8 +94,8 @@ export class TodolistModule extends ModuleBase<Todolist.TodolistModuleState> {
     }
 
     @Mutation()
-    private updateTodoListState(todolist: Todolist.Todolist, visibleTodos: Todolist.Todo[]) {
-        let currentState = this.getTodolistState(todolist.todolistId);
+    private updateTodoListState(todolist: Todolist.Todolist, visibleTodos: Todolist.Todo[]): void {
+        let currentState: Todolist.TodolistState | undefined = this.getTodolistState(todolist.todolistId);
 
         if (currentState) {
             currentState.todolist = todolist;
@@ -110,7 +110,7 @@ export class TodolistModule extends ModuleBase<Todolist.TodolistModuleState> {
     }
 }
 
-function setLoading(todolistState: Todolist.TodolistState, loading: boolean) {
+function setLoading(todolistState: Todolist.TodolistState, loading: boolean): void {
     todolistState.loading = loading;
     todolistState.loadingError = false;
 }
