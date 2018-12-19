@@ -22,6 +22,14 @@
                       slot-scope="{ data }">
                 <m-i18n :k="'todolist:status-' + data.status"></m-i18n>
             </template>
+
+            <template slot="body.todolistId"
+                      slot-scope="{ data }">
+                <m-option>
+                    <m-option-item-edit></m-option-item-edit>
+                    <m-option-item-delete @click="$emit('delete-todo', data)"></m-option-item-delete>
+                </m-option>
+            </template>
         </m-table>
     </template>
 

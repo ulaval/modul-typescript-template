@@ -1,4 +1,5 @@
 import { Action, ModuleBase, Mutation } from '@ulaval/modul-vuex/dist/vuex-annotations';
+import Vue from 'vue';
 import { Store } from 'vuex';
 
 export class TodolistModule extends ModuleBase<Todolist.TodolistModuleState> {
@@ -25,6 +26,17 @@ export class TodolistModule extends ModuleBase<Todolist.TodolistModuleState> {
     @Mutation()
     public onCloseForm(state: Todolist.TodolistState) {
         state.todolistFormState = newTodolistFormState();
+    }
+
+    @Mutation()
+    public onDeleteTodo(state: Todolist.TodolistState, todo: Todolist.Todo) {
+        const index = state.visibleTodos.findIndex(val => val === todo);
+
+        console.info(index);
+
+        if (index >= 0) {
+            Vue.delete(state.visibleTodos, index);
+        }
     }
 
     public getTodolistState(todolistId: string): Todolist.TodolistState | undefined {

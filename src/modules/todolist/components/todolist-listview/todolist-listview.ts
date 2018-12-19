@@ -42,6 +42,11 @@ export default class TodolistListView extends Vue {
             id: 'status',
             title: 'Status',
             dataProp: 'status'
+        },
+        {
+            id: 'menu',
+            title: '',
+            dataProp: 'todolistId'
         }
     ];
 }
