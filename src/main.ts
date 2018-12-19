@@ -51,9 +51,9 @@ Vue.use(appConfig, { store });
 let langPromise: Promise<any>;
 
 if (curLang == ENGLISH) {
-    langPromise = import(/* webpackChunkName: "en" */ '@/lang/en');
+    langPromise = import(/* webpackChunkName: "en" */ '@/common/lang/en');
 } else {
-    langPromise = import(/* webpackChunkName: "fr" */ '@/lang/fr');
+    langPromise = import(/* webpackChunkName: "fr" */ '@/common/lang/fr');
 }
 
 langPromise.then((langPlugin: any) => {
