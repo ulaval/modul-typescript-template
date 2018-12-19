@@ -1,6 +1,14 @@
-article {
+@import '~@ulaval/modul-components/dist/styles/abstracts/variables';
+
+.main-layout {
     min-height: 100%;
     display: grid;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: minmax(70px, auto) 1fr auto;
     grid-template-columns: 100%;
+
+    &__footer {
+        padding: m-spacing();
+        text-align: center;
+        background-color: #43545f;
+    }
 }

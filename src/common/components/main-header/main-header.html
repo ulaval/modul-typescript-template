@@ -4,33 +4,36 @@
              alt="Vue logo"
              src="../../assets/logo.png" />
     </m-link>
+    <div class="main-header__item">
+        <m-link class="main-header__lang"
+                mode="button"
+                @click="onToggleLang();">
+            {{ toggleLangLabel }}
+        </m-link>
 
-    <m-popper :open="navOpened"
-              close-on-click-outside="true"
-              class="main-header__profile"
-              placement="bottom">
+        <m-popper :open="navOpened"
+                  close-on-click-outside="true"
+                  class="main-header__profile"
+                  placement="bottom">
 
-        <m-icon name="profile"
-                slot="trigger"
-                class="main-header__profileicon"
-                @click="navOpened = !navOpened"></m-icon>
-        <ul>
-            <li>
-                <m-link url="/">Home</m-link>
-            </li>
-            <li>
-                <m-link url="/todos">TODOs</m-link>
-            </li>
-            <li>
-                <m-link url="/about">About</m-link>
-            </li>
-            <li>
-                <m-link url="/xxx">Invalid page</m-link>
-            </li>
-        </ul>
-    </m-popper>
-
-    <m-button class="main-header__lang"
-              skin="secondary"
-              @click="onToggleLang();">{{ toggleLangLabel }}</m-button>
+            <m-icon name="profile"
+                    slot="trigger"
+                    class="main-header__profileicon"
+                    @click="navOpened = !navOpened"></m-icon>
+            <ul>
+                <li>
+                    <m-link url="/">Home</m-link>
+                </li>
+                <li>
+                    <m-link url="/todos">TODOs</m-link>
+                </li>
+                <li>
+                    <m-link url="/about">About</m-link>
+                </li>
+                <li>
+                    <m-link url="/xxx">Invalid page</m-link>
+                </li>
+            </ul>
+        </m-popper>
+    </div>
 </div>
