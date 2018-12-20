@@ -1,7 +1,7 @@
 import Confirmation from '@/common/components/confirmation/confirmation';
-import { MModal } from '@ulaval/modul-components/dist/components/modal/modal';
-import { MColumnTable, MTable } from '@ulaval/modul-components/dist/components/table/table';
-import { dateFilter } from '@ulaval/modul-components/dist/filters/date/date';
+import { MModal } from '@modul/components/modal/modal';
+import { MColumnTable, MTable } from '@modul/components/table/table';
+import { dateFilter } from '@modul/filters/date/date';
 import Vue from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';

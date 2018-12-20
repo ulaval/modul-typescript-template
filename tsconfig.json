@@ -18,6 +18,9 @@
         "paths": {
             "@/*": [
                 "src/*"
+            ],
+            "@modul/*": [
+                "node_modules/@ulaval/modul-components/dist/*"
             ]
         },
         "lib": [

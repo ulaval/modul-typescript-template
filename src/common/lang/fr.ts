@@ -1,5 +1,5 @@
-import ComponentsFrenchPlugin from '@ulaval/modul-components/dist/lang/fr';
-import { BundleMessagesMap, FRENCH } from '@ulaval/modul-components/dist/utils/i18n/i18n';
+import ComponentsFrenchPlugin from '@modul/lang/fr';
+import { BundleMessagesMap, FRENCH } from '@modul/utils/i18n/i18n';
 import { PluginObject, VueConstructor } from 'vue';
 
 const messages: BundleMessagesMap = {

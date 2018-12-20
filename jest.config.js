@@ -17,7 +17,8 @@ module.exports = {
     moduleNameMapper: {
         "^(.+\\.html)(\\?style=\\..+)?$": "$1",
         "\\.min\\.(css|less|sass|scss)|\\.svg$": "<rootDir>/jest/jest-ignore.js",
-        "@\/(.*)": "<rootDir>/src/$1"
+        "@\/(.*)": "<rootDir>/src/$1",
+        "@modul\/(.*)": "<rootDir>/node_modules/@ulaval/modul-components/dist/$1"
     },
     snapshotSerializers: [
         'jest-serializer-vue'

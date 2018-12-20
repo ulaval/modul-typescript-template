@@ -1,5 +1,5 @@
-import { MTextfield } from '@ulaval/modul-components/dist/components/textfield/textfield';
-import { dateFilter } from '@ulaval/modul-components/dist/filters/date/date';
+import { MTextfield } from '@modul/components/textfield/textfield';
+import { dateFilter } from '@modul/filters/date/date';
 import Vue from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';

@@ -1,5 +1,5 @@
-import MessagePlugin, { DebugMode, ENGLISH, I18nPluginOptions } from '@ulaval/modul-components/dist/utils/i18n/i18n';
-import LoggerPlugin, { ConsoleOptions } from '@ulaval/modul-components/dist/utils/logger/logger';
+import MessagePlugin, { DebugMode, ENGLISH, I18nPluginOptions } from '@modul/utils/i18n/i18n';
+import LoggerPlugin, { ConsoleOptions } from '@modul/utils/logger/logger';
 import Vue from 'vue';
 
 let i18nOptions: I18nPluginOptions = {

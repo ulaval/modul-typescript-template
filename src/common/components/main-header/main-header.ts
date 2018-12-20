@@ -1,10 +1,10 @@
-import { MButton } from '@ulaval/modul-components/dist/components/button/button';
-import { MDropdown } from '@ulaval/modul-components/dist/components/dropdown/dropdown';
-import { MIcon } from '@ulaval/modul-components/dist/components/icon/icon';
-import { MLink } from '@ulaval/modul-components/dist/components/link/link';
-import { MPanel } from '@ulaval/modul-components/dist/components/panel/panel';
-import { MPopper } from '@ulaval/modul-components/dist/components/popper/popper';
-import { ENGLISH, FRENCH } from '@ulaval/modul-components/dist/utils/i18n/i18n';
+import { MButton } from '@modul/components/button/button';
+import { MDropdown } from '@modul/components/dropdown/dropdown';
+import { MIcon } from '@modul/components/icon/icon';
+import { MLink } from '@modul/components/link/link';
+import { MPanel } from '@modul/components/panel/panel';
+import { MPopper } from '@modul/components/popper/popper';
+import { ENGLISH, FRENCH } from '@modul/utils/i18n/i18n';
 import Vue from 'vue';
 import { Component } from 'vue-property-decorator';
 import WithRender from './main-header.html?style=./main-header.scss';
