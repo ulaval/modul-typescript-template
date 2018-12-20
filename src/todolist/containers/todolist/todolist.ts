@@ -1,3 +1,4 @@
+import { TodolistState } from '@/todolist/model/todolist-model';
 import Vue from 'vue';
 import Component from 'vue-class-component';
 import { Prop, Watch } from 'vue-property-decorator';
@@ -21,7 +22,7 @@ export default class Todolist extends Vue {
         this.$todolistModule.loadTodolist(this.todolistId);
     }
 
-    get state(): Todolist.TodolistState | undefined {
+    get state(): TodolistState | undefined {
         return this.$todolistModule.getTodolistState(this.todolistId);
     }
 }

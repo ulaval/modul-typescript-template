@@ -1,7 +1,8 @@
-import Todolist from '../containers/todolist/todolist';
+import { Todo, Todolist } from './todolist-model';
+import { TodolistRepository } from './todolist-module';
 
-export class TodolistRepositoryDummy implements Todolist.TodolistRepository {
-    private dummyData: { [k: string]: Todolist.Todolist } = {
+export class TodolistRepositoryDummy implements TodolistRepository {
+    private dummyData: { [k: string]: Todolist } = {
         '1': {
             todolistId: '1',
             todolistName: 'Demo list 1'
@@ -12,10 +13,10 @@ export class TodolistRepositoryDummy implements Todolist.TodolistRepository {
         }
     };
 
-    loadTodolist(todolistId: string): Promise<Todolist.Todolist> {
+    loadTodolist(todolistId: string): Promise<Todolist> {
         return new Promise((resolve: any, reject: any): void => {
             setTimeout(() => {
-                const list: Todolist.Todolist = this.dummyData[todolistId];
+                const list: Todolist = this.dummyData[todolistId];
 
                 if (!list) {
                     reject(new Error(`List ${todolistId} does not exist.`));
@@ -26,7 +27,7 @@ export class TodolistRepositoryDummy implements Todolist.TodolistRepository {
         });
     }
 
-    async searchTodos(todolistId: string, lastTodolistId?: string, pageSize?: number): Promise<Todolist.Todo[]> {
+    async searchTodos(todolistId: string, lastTodolistId?: string, pageSize?: number): Promise<Todo[]> {
         return ([
             {
                 todoId: '1',
@@ -57,17 +58,17 @@ export class TodolistRepositoryDummy implements Todolist.TodolistRepository {
                 description: '',
                 status: 'wont_complete'
             }
-        ] as Todolist.Todo[])
-            .filter((todo: Todolist.Todo) => todo.todolistId === todolistId);
+        ] as Todo[])
+            .filter((todo: Todo) => todo.todolistId === todolistId);
     }
 
-    addTodo(todo: Todolist.Todo): Promise<Todolist.Todo> {
+    addTodo(todo: Todo): Promise<Todo> {
         throw new Error('Method not implemented.');
     }
-    updateTodo(todo: Todolist.Todo): Promise<Todolist.Todo> {
+    updateTodo(todo: Todo): Promise<Todo> {
         throw new Error('Method not implemented.');
     }
-    deleteTodo(todo: Todolist.Todo): Promise<Todolist.Todo> {
+    deleteTodo(todo: Todo): Promise<Todo> {
         throw new Error('Method not implemented.');
     }
 }

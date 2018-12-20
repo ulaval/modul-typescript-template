@@ -1,3 +1,4 @@
+import { Todo, TodolistFormState } from '@/todolist/model/todolist-model';
 import { MTextfield } from '@modul/components/textfield/textfield';
 import { dateFilter } from '@modul/filters/date/date';
 import Vue from 'vue';
@@ -16,10 +17,10 @@ export default class TodolistForm extends Vue {
     @Prop({
         required: true
     })
-    state!: Todolist.TodolistFormState;
+    state!: TodolistFormState;
 
     @Emit('confirm-form')
-    emitConfirmForm(todo: Todolist.Todo): void {
+    emitConfirmForm(todo: Todo): void {
     }
 
     @Emit('close-form')
@@ -30,7 +31,7 @@ export default class TodolistForm extends Vue {
     description: string = '';
 
     onConfirm(): void {
-        const todo: Todolist.Todo = {
+        const todo: Todo = {
             todoId: '-1',
             todolistId: '-1',
             title: this.title,

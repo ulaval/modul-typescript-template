@@ -1,4 +1,5 @@
 import Confirmation from '@/common/components/confirmation/confirmation';
+import { Todo, TodolistState } from '@/todolist/model/todolist-model';
 import { MModal } from '@modul/components/modal/modal';
 import { MColumnTable, MTable } from '@modul/components/table/table';
 import { dateFilter } from '@modul/filters/date/date';
@@ -17,7 +18,7 @@ import WithRender from './todolist-listview.html';
 })
 export default class TodolistListView extends Vue {
     @Prop()
-    state!: Todolist.TodolistState;
+    state!: TodolistState;
 
     @Emit('open-new-form')
     emitOpenNewForm(): void {
@@ -28,11 +29,11 @@ export default class TodolistListView extends Vue {
     }
 
     @Emit('delete-todo')
-    emitDeleteTodo(todo: Todolist.Todo): void {
+    emitDeleteTodo(todo: Todo): void {
     }
 
     deleteConfirmationOpen: boolean = false;
-    currentTodo?: Todolist.Todo;
+    currentTodo?: Todo;
 
     columns: MColumnTable[] = [
         {
@@ -66,7 +67,7 @@ export default class TodolistListView extends Vue {
         this.emitOpenNewForm();
     }
 
-    onDeleteTodo(todo: Todolist.Todo): void {
+    onDeleteTodo(todo: Todo): void {
         this.currentTodo = todo;
         this.deleteConfirmationOpen = true;
     }

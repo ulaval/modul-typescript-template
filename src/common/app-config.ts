@@ -1,5 +1,5 @@
-import { TodolistModule } from '@/todolist/services/todolist-module';
-import { TodolistRepositoryDummy } from '@/todolist/services/todolist-repository-dummy';
+import { TodolistModule } from '@/todolist/model/todolist-module';
+import { TodolistRepositoryDummy } from '@/todolist/model/todolist-repository-dummy';
 
 export default {
     install(vue: any, options: any): void {

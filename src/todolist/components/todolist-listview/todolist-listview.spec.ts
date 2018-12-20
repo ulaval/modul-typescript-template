@@ -1,17 +1,22 @@
+import { TodolistState } from '@/todolist/model/todolist-model';
 import { genSnapshotsTests, PropsData } from '@jest/jest-utils';
 import TodolistListView from './todolist-listview';
+
+const loadingState: Partial<TodolistState> = {
+    loading: true
+};
 
 const states: PropsData = {
     'loading state': {
         state: {
             loading: true
-        } as Todolist.TodolistState
+        } as TodolistState
     },
     'loading error state': {
         state: {
             loading: false,
             loadingError: true
-        } as Todolist.TodolistState
+        } as TodolistState
     },
     'normal state': {
         state: {
@@ -35,7 +40,7 @@ const states: PropsData = {
                     status: 'open'
                 }
             ]
-        } as Todolist.TodolistState
+        } as TodolistState
     }
 };
 
