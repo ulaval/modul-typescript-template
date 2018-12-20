@@ -118,14 +118,7 @@ function setLoading(todolistState: Todolist.TodolistState, loading: boolean): vo
 function newTodolistFormState(): Todolist.TodolistFormState {
     return {
         open: false,
-        mode: 'new',
-        todo: {
-            todoId: '-1',
-            todolistId: '-1',
-            description: '',
-            status: 'open',
-            title: ''
-        }
+        mode: 'new'
     };
 }
 

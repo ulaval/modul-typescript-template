@@ -21,6 +21,9 @@
             ],
             "@modul/*": [
                 "node_modules/@ulaval/modul-components/dist/*"
+            ],
+            "@jest/*": [
+                "jest/*"
             ]
         },
         "lib": [

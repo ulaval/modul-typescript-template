@@ -13,7 +13,9 @@ import WithRender from './todolist-form.html';
     }
 })
 export default class TodolistForm extends Vue {
-    @Prop()
+    @Prop({
+        required: true
+    })
     state!: Todolist.TodolistFormState;
 
     @Emit('confirm-form')

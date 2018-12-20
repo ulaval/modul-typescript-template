@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodolistForm edit state 1`] = `
+<m-modal title="Edit">
+  <section>
+    Title: <m-textfield-stub type="text" passwordicon="true" maxlength="0" lengthoverflow="true" charactercountthreshold="0"></m-textfield-stub> <br>
+    Description: <m-textfield-stub type="text" passwordicon="true" maxlength="0" lengthoverflow="true" charactercountthreshold="0"></m-textfield-stub>
+    <m-button>Ok</m-button>
+    <m-button>Cancel</m-button>
+  </section>
+</m-modal>
+`;
+
+exports[`TodolistForm new state 1`] = `
+<m-modal title="New">
+  <section>
+    Title: <m-textfield-stub type="text" passwordicon="true" maxlength="0" lengthoverflow="true" charactercountthreshold="0"></m-textfield-stub> <br>
+    Description: <m-textfield-stub type="text" passwordicon="true" maxlength="0" lengthoverflow="true" charactercountthreshold="0"></m-textfield-stub>
+    <m-button>Ok</m-button>
+    <m-button>Cancel</m-button>
+  </section>
+</m-modal>
+`;

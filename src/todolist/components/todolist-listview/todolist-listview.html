@@ -37,9 +37,9 @@
                       :open="deleteConfirmationOpen"
                       @confirm="onConfirmDeleteTodo()"
                       @cancel="onCancelDeleteTodo()"></confirmation>
-    </template>
 
-    <todolist-form v-if="state.todolistFormState.open"
-                   :state="state.todolistFormState"
-                   v-on="$listeners"></todolist-form>
+        <todolist-form v-if="state.todolistFormState.open"
+                       :state="state.todolistFormState"
+                       v-on="$listeners"></todolist-form>
+    </template>
 </section>

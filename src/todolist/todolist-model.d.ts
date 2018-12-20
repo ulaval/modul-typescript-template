@@ -20,7 +20,7 @@ declare namespace Todolist {
     interface TodolistFormState {
         open: boolean;
         mode: FormMode;
-        todo: Todo;
+        todo?: Todo;
     }
 
     interface TodolistState {
