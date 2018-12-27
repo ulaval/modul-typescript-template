@@ -12,7 +12,7 @@ module.exports = {
     configureWebpack: {
         resolve: {
             alias: {
-                "@modul": `C:\\Dev\\projets\\modul\\modul-typescript-template\\node_modules\\@ulaval\\modul-components\\dist`
+                "@modul": require("path").resolve(__dirname, "node_modules/@ulaval/modul-components/dist")
             }
         },
         plugins: [
