@@ -1,11 +1,8 @@
-import MErrorLayout from '@/common/components/layouts/error-layout/error-layout';
 import Vue from 'vue';
 import { Component } from 'vue-property-decorator';
 import WithRender from './not-found.html';
 
 @WithRender
-@Component({
-    components: { MErrorLayout }
-})
+@Component
 export default class NotFound extends Vue {
 }

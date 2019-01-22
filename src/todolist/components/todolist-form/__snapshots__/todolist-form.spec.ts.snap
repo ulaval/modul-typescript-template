@@ -3,8 +3,8 @@
 exports[`TodolistForm edit state 1`] = `
 <m-modal title="Edit">
   <section>
-    Title: <m-textfield-stub type="text" passwordicon="true" maxlength="0" lengthoverflow="true" charactercountthreshold="0"></m-textfield-stub> <br>
-    Description: <m-textfield-stub type="text" passwordicon="true" maxlength="0" lengthoverflow="true" charactercountthreshold="0"></m-textfield-stub>
+    Title: <m-textfield></m-textfield> <br>
+    Description: <m-textfield></m-textfield>
     <m-button>Ok</m-button>
     <m-button>Cancel</m-button>
   </section>
@@ -14,8 +14,8 @@ exports[`TodolistForm edit state 1`] = `
 exports[`TodolistForm new state 1`] = `
 <m-modal title="New">
   <section>
-    Title: <m-textfield-stub type="text" passwordicon="true" maxlength="0" lengthoverflow="true" charactercountthreshold="0"></m-textfield-stub> <br>
-    Description: <m-textfield-stub type="text" passwordicon="true" maxlength="0" lengthoverflow="true" charactercountthreshold="0"></m-textfield-stub>
+    Title: <m-textfield></m-textfield> <br>
+    Description: <m-textfield></m-textfield>
     <m-button>Ok</m-button>
     <m-button>Cancel</m-button>
   </section>

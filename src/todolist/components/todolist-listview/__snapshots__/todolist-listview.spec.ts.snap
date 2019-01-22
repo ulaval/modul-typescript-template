@@ -16,7 +16,7 @@ exports[`TodolistListView normal state 1`] = `
 <section>
   <h1>todolist:welcome - Unit test</h1>
   <m-button>Nouvelle tâche</m-button>
-  <m-table-stub skin="regular" columns="[object Object],[object Object],[object Object],[object Object],[object Object]" rows="[object Object]"></m-table-stub>
+  <m-table columns="[object Object],[object Object],[object Object],[object Object],[object Object]" rows="[object Object]"></m-table>
   <confirmation-stub title="Confirmation" text="Are you sure ?" confirmmsg="Ok" cancelmsg="Cancel"></confirmation-stub>
   <!---->
 </section>
