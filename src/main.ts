@@ -41,7 +41,6 @@ Vue.use(MOptionPlugin);
 Vue.use(MButtonPlugin);
 Vue.use(MErrorPageNotFoundPlugin);
 Vue.use(MDropdownPlugin);
-// Vue.use(MToastPlugin);
 Vue.use(Vuex);
 
 const store: Store<any> = new Vuex.Store({
