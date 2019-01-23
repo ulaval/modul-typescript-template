@@ -12,11 +12,10 @@ import MTablePlugin from '@modul/components/table/table';
 import MTextFieldPlugin from '@modul/components/textfield/textfield';
 import MI18nFilterPlugin from '@modul/filters/i18n/i18n';
 import '@modul/styles/main.scss';
-import MUtilsPlugin from '@modul/utils';
 import { ENGLISH, FRENCH } from '@modul/utils/i18n/i18n';
 import '@modul/utils/polyfills';
 import MDefaultSpritesPlugin from '@modul/utils/svg/default-sprites';
-import MToastPlugin from '@modul/utils/toast/toast-service';
+import MUtilsPlugin from '@modul/utils/utils-plugin';
 import Vue from 'vue';
 import Vuex, { Store } from 'vuex';
 import appConfig from './common/app-config';
@@ -42,7 +41,7 @@ Vue.use(MOptionPlugin);
 Vue.use(MButtonPlugin);
 Vue.use(MErrorPageNotFoundPlugin);
 Vue.use(MDropdownPlugin);
-Vue.use(MToastPlugin);
+// Vue.use(MToastPlugin);
 Vue.use(Vuex);
 
 const store: Store<any> = new Vuex.Store({
