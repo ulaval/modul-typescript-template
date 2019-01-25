@@ -1,5 +1,6 @@
+
 import Component from 'vue-class-component';
-import { Prop, Vue } from 'vue-property-decorator';
+import { Emit, Prop, Vue } from 'vue-property-decorator';
 import WithRender from './confirmation.html?style=./confirmation.scss';
 
 @WithRender
@@ -12,23 +13,23 @@ export default class MessageConfirmation extends Vue {
     text!: string;
 
     @Prop({
-        default: (Vue.prototype as any).$i18n.translate('common:confirm')
+        default: (Vue.prototype).$i18n.translate('common:confirm')
     })
     confirmMsg!: string;
 
     @Prop({
-        default: (Vue.prototype as any).$i18n.translate('common:cancel')
+        default: (Vue.prototype).$i18n.translate('common:cancel')
     })
     cancelMsg!: string;
 
     @Prop({ default: false })
     open!: boolean;
 
+    @Emit('confirm')
     onConfirm(): void {
-        this.$emit('confirm');
     }
 
+    @Emit('cancel')
     onCancel(): void {
-        this.$emit('cancel');
     }
 }

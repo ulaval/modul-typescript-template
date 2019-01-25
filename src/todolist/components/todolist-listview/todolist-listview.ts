@@ -1,8 +1,7 @@
 import Confirmation from '@/common/components/confirmation/confirmation';
 import { Todo, TodolistState } from '@/todolist/model/todolist-model';
-import { MModal } from '@modul/components/modal/modal';
-import { MColumnTable, MTable } from '@modul/components/table/table';
-import { dateFilter } from '@modul/filters/date/date';
+import { MColumnTable } from '@modul/components/table/table';
+import { dateFilter } from '@modul/filters/date/date/date';
 import Vue from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
@@ -11,7 +10,7 @@ import WithRender from './todolist-listview.html';
 
 @WithRender
 @Component({
-    components: { MTable, MModal, TodolistForm, Confirmation },
+    components: { TodolistForm, Confirmation },
     filters: {
         formatDate: (date: Date | undefined): string => date ? dateFilter(date) : ''
     }

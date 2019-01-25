@@ -28,28 +28,28 @@ exports[`WelcomePage should render correctly 1`] = `
     </article>
   </section>
   <section class="welcome-page__content">
-    <m-button-stub type="button" skin="primary" iconposition="left" iconsize="12px">
-      <m-icon-stub name="edit" size="1em"></m-icon-stub> Modul button
-    </m-button-stub>
+    <m-button>
+      <m-icon name="edit"></m-icon> Modul button
+    </m-button>
     <p>
-      <m-accordion-group-stub skin="default" class="m-u--margin-top">
-        <m-accordion-stub skin="default" iconposition="left" iconsize="large" padding="true" paddingheader="true" paddingbody="true">
-          <h2 class="m-u--no-margin">Titre 1</h2>
+      <m-accordion-group class="m-u--margin-top">
+        <m-accordion>
+          <h2 slot="header" class="m-u--no-margin">Titre 1</h2>
           Contenu de l'accordéon 1
-        </m-accordion-stub>
-        <m-accordion-stub skin="default" iconposition="left" iconsize="large" padding="true" paddingheader="true" paddingbody="true">
-          <h2 class="m-u--no-margin">Titre 2</h2>
+        </m-accordion>
+        <m-accordion>
+          <h2 slot="header" class="m-u--no-margin">Titre 2</h2>
           Contenu de l'accordéon 2
-        </m-accordion-stub>
-        <m-accordion-stub skin="default" iconposition="left" iconsize="large" padding="true" paddingheader="true" paddingbody="true">
-          <h2 class="m-u--no-margin">Titre 3</h2>
+        </m-accordion>
+        <m-accordion>
+          <h2 slot="header" class="m-u--no-margin">Titre 3</h2>
           Contenu de l'accordéon 3
-        </m-accordion-stub>
-        <m-accordion-stub skin="default" iconposition="left" iconsize="large" padding="true" paddingheader="true" paddingbody="true">
-          <h2 class="m-u--no-margin">Titre 4</h2>
+        </m-accordion>
+        <m-accordion>
+          <h2 slot="header" class="m-u--no-margin">Titre 4</h2>
           Contenu de l'accordéon 4
-        </m-accordion-stub>
-      </m-accordion-group-stub>
+        </m-accordion>
+      </m-accordion-group>
     </p>
   </section>
 </section>
