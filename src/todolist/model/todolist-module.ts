@@ -93,7 +93,7 @@ export class TodolistModule extends ModuleBase<TodolistModuleState> {
     }
 
     @Mutation()
-    private setLoadingTodoList(todolistId: string, loading: boolean, error: any = null): void {
+    private setLoadingTodoList(todolistId: string, loading: boolean, error: any = undefined): void {
         let todolistState: TodolistState | undefined = this.state.todolists[todolistId];
 
         if (!todolistState) {

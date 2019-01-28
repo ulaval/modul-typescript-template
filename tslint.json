@@ -6,6 +6,7 @@
         ]
     },
     "rules": {
+        "no-consecutive-blank-lines": false,
         "await-promise": false,
         "no-use-before-declare": false,
         "return-undefined": false,
@@ -16,7 +17,7 @@
             true,
             "spaces"
         ],
-        "triple-equals": false,
+        "triple-equals": true,
         "ter-indent": [
             true,
             4,
@@ -34,18 +35,6 @@
                 "constructor": "never"
             }
         ],
-        "semicolon": [
-            true,
-            "always"
-        ],
-        "quotemark": [
-            true,
-            "single",
-            "avoid-escape"
-        ],
-        "no-empty": false,
-        "no-debugger": true,
-        "no-null-keyword": false,
         "typedef": [
             true,
             "call-signature",
@@ -57,6 +46,26 @@
             "member-variable-declaration",
             "object-destructuring",
             "array-destructuring"
+        ],
+        "semicolon": [
+            true,
+            "always"
+        ],
+        "quotemark": [
+            true,
+            "single",
+            "avoid-escape"
+        ],
+        "no-empty": false,
+        "no-debugger": true,
+        "no-null-keyword": true,
+        "curly": true,
+        "no-console": [
+            true,
+            "debug",
+            "log",
+            "warn",
+            "info"
         ]
     }
 }
