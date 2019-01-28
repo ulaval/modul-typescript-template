@@ -41,7 +41,6 @@
         "svg-inline-loader": "^0.8.0",
         "ts-jest": "^23.10.5",
         "tslint-config-standard": "^8.0.1",
-        "tslint-loader": "^3.5.4",
         "typescript": "^3.2.4",
         "typescript-tslint-plugin": "^0.3.0",
         "vue": "^2.5.22",
