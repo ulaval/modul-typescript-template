@@ -7,4 +7,7 @@ import WithRender from './welcome-page.html?style=./welcome-page.scss';
 @Component({
     components: { MainLayout }
 })
-export default class WelcomePage extends Vue { }
+export default class WelcomePage extends Vue {
+
+
+}

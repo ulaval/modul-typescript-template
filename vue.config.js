@@ -2,7 +2,7 @@ const StyleLintPlugin = require('stylelint-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
-    lintOnSave: false,
+    lintOnSave: true,
 
     chainWebpack: config => {
         config.module.rules.delete("svg");
@@ -74,23 +74,10 @@ module.exports = {
                     removingTags: ['desc', 'defs', 'style'],
                     removeSVGTagAttrs: true
                 }
-            },
-            {
-                test: /\.ts$/,
-                enforce: 'pre',
-                loader: 'tslint-loader',
-                include: [/src/],
-                options: {
-                    configFile: 'tslint.json',
-                    formatter: 'grouped',
-                    formattersDirectory: 'node_modules/custom-tslint-formatters/formatters',
-                    emitErrors: true
-                }
             }
             ]
         },
     },
-
     baseUrl: undefined,
     outputDir: undefined,
     assetsDir: undefined,

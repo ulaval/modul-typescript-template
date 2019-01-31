@@ -9,17 +9,17 @@ This project aims at kickstarting projects at University Laval but could also he
 1. Install [Git](https://git-scm.com/)
 2. Install [Node](https://nodejs.org/)
 3. Update [npm](https://docs.npmjs.com/getting-started/installing-node)
-4. Clone this project
-5. Change the name and version in package.json
-6. Check if the Apache v2 licencing applies
-7. Run npm install
-8. Run npm run serve
-9. Open you browser and navigate to http://localhost:8080/
+4. Install the [vue-cli] (https://cli.vuejs.org/guide/installation.html)
+5. Clone this project
+6. Change the name and version in package.json
+7. Check if the Apache v2 licencing applies
+8. Run npm install
+9. Run npm run serve
+10. Open you browser and navigate to http://localhost:8080/
 
 ## Editor
 
 [Visual Studio Code](https://code.visualstudio.com/) is the recommanded editor.
-
 
 ## Supported commands
 
