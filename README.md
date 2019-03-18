@@ -2,7 +2,7 @@
 
 Template to start a new MODUL project with [Vuejs](https://vuejs.org/) and [Typescript](https://www.typescriptlang.org/)
 
-This project aims at kickstarting projects at University Laval but could also help others. Feel free to try it out and send us some feedback.
+This project aims at kickstarting projects at Université Laval but could also help others. Feel free to try it out and send us some feedback.
 
 ## Getting started
 
