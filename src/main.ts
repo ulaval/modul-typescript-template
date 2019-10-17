@@ -16,6 +16,7 @@ import { ENGLISH, FRENCH } from '@modul/utils/i18n/i18n';
 import '@modul/utils/polyfills';
 import MDefaultSpritesPlugin from '@modul/utils/svg/default-sprites';
 import MUtilsPlugin from '@modul/utils/utils-plugin';
+import { RichTextLicensePlugin } from '@ulaval/modul-rich-text-editor';
 import Vue from 'vue';
 import Vuex, { Store } from 'vuex';
 import appConfig from './common/app-config';
@@ -41,6 +42,9 @@ Vue.use(MOptionPlugin);
 Vue.use(MButtonPlugin);
 Vue.use(MErrorPageNotFoundPlugin);
 Vue.use(MDropdownPlugin);
+
+Vue.use(RichTextLicensePlugin, { key: `test`, curlang: FRENCH });
+
 Vue.use(Vuex);
 
 const store: Store<any> = new Vuex.Store({

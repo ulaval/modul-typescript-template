@@ -1,5 +1,6 @@
 import NotFound from '@/common/components/errors/not-found/not-found';
 import MainLayout from '@/common/components/layouts/main-layout/main-layout';
+import WelcomePage from '@/welcome/welcome-page';
 import Vue from 'vue';
 import Router from 'vue-router';
 
@@ -19,7 +20,7 @@ export default new Router({
                     // route level code-splitting
                     // this generates a separate chunk (about.[hash].js) for this route
                     // which is lazy-loaded when the route is visited.
-                    component: (): any => import(/* webpackChunkName: "todolist" */ '@/welcome/welcome-page')
+                    component: WelcomePage
                 },
                 {
                     path: 'todos',

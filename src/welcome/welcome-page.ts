@@ -3,11 +3,15 @@ import Vue from 'vue';
 import Component from 'vue-class-component';
 import WithRender from './welcome-page.html?style=./welcome-page.scss';
 
+
+
+
 @WithRender
 @Component({
-    components: { MainLayout }
+    components: {
+        MainLayout
+    }
 })
 export default class WelcomePage extends Vue {
-
 
 }
