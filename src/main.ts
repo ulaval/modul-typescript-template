@@ -16,16 +16,16 @@ import { ENGLISH, FRENCH } from '@modul/utils/i18n/i18n';
 import '@modul/utils/polyfills';
 import MDefaultSpritesPlugin from '@modul/utils/svg/default-sprites';
 import MUtilsPlugin from '@modul/utils/utils-plugin';
-import { RichTextLicensePlugin } from '@ulaval/modul-rich-text-editor';
+import FileUploadPlugin from '@ulaval/modul-components/dist/components/file-upload/file-upload';
 import Vue from 'vue';
 import Vuex, { Store } from 'vuex';
 import appConfig from './common/app-config';
 import Root from './common/components/root/root';
 import router from './common/router';
-
 Vue.config.productionTip = false;
 
 const curLang: string = localStorage.getItem('lang') || FRENCH;
+
 
 Vue.use(MUtilsPlugin, { propagateVueParserErrors: false, i18PluginOptions: { curLang } }); // propagateVueError to console and use french
 Vue.use(MDefaultSpritesPlugin);
@@ -42,8 +42,10 @@ Vue.use(MOptionPlugin);
 Vue.use(MButtonPlugin);
 Vue.use(MErrorPageNotFoundPlugin);
 Vue.use(MDropdownPlugin);
+Vue.use(FileUploadPlugin);
+// Vue.use(RichTextLicensePlugin, { key: `test` });
+// Vue.use(MRichTextEditor);
 
-Vue.use(RichTextLicensePlugin, { key: `test`, curlang: FRENCH });
 
 Vue.use(Vuex);
 

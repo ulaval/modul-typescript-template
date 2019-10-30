@@ -66,6 +66,12 @@
             "log",
             "warn",
             "info"
+        ],
+        "import-blacklist": [
+            true,
+            [
+                "^@ulaval\/modul-components(?![\/])"
+            ]
         ]
     }
 }

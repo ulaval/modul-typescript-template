@@ -17,12 +17,12 @@
         "inspect": "vue inspect",
         "upgrade": "vue upgrade"
     },
-    "dependencies": {},
+    "dependencies": {
+        "@ulaval/modul-components": "file:../modul/packages/modul-components/ulaval-modul-components-v1.0.0-beta.134.tgz"
+    },
     "devDependencies": {
         "@types/jest": "^23.3.13",
         "@types/sprintf-js": "^1.1.2",
-        "@ulaval/modul-components": "^1.0.0-beta.133",
-        "@ulaval/modul-rich-text-editor": "^1.0.0-PR100.28",
         "@ulaval/modul-vuex": "^1.0.1",
         "@vue/cli-plugin-babel": "^3.11.0",
         "@vue/cli-plugin-typescript": "^3.11.0",
