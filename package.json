@@ -17,11 +17,10 @@
         "inspect": "vue inspect",
         "upgrade": "vue upgrade"
     },
-    "dependencies": {},
     "devDependencies": {
         "@types/jest": "^23.3.13",
         "@types/sprintf-js": "^1.1.2",
-        "@ulaval/modul-components": "^1.0.0-beta.131",
+        "@ulaval/modul-components": "file:../modul/packages/modul-components/ulaval-modul-components-v1.0.0-beta.137.tgz",
         "@ulaval/modul-vuex": "^1.0.1",
         "@vue/cli-plugin-babel": "^3.11.0",
         "@vue/cli-plugin-typescript": "^3.11.0",
@@ -45,6 +44,7 @@
         "typescript-tslint-plugin": "^0.5.4",
         "vue": "^2.6.10",
         "vue-class-component": "^7.1.0",
+        "vue-cli-plugin-webpack-bundle-analyzer": "^1.4.0",
         "vue-property-decorator": "^8.2.2",
         "vue-router": "^3.1.3",
         "vue-template-compiler": "^2.6.10",

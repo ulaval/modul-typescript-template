@@ -1,10 +1,5 @@
 {
     "extends": "tslint-config-standard",
-    "linterOptions": {
-        "exclude": [
-            "node_modules/**"
-        ]
-    },
     "rules": {
         "no-consecutive-blank-lines": false,
         "await-promise": false,
@@ -66,6 +61,12 @@
             "log",
             "warn",
             "info"
+        ],
+        "import-blacklist": [
+            true,
+            [
+                "^@ulaval\/modul-components(?![\/])"
+            ]
         ]
     }
 }

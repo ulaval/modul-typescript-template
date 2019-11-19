@@ -4,8 +4,19 @@ import Vue from 'vue';
 import Component from 'vue-class-component';
 import WithRender from './about-page.html';
 
+const phoneFieldChunk: () => Promise<any> = (): Promise<any> => import(/* webpackChunkName: "phonefield" */ '@ulaval/modul-components/dist/components/phonefield/phonefield').then((exports: any) => {
+    return exports.MPhonefield;
+});
+
+
 @WithRender
 @Component({
-    components: { MainLayout, MPanel }
+    components: { 'm-phonefield': phoneFieldChunk, MainLayout, MPanel }
 })
-export default class AboutPage extends Vue { }
+export default class AboutPage extends Vue {
+    public model: string = '';
+    public country: any = {
+        iso: 'ca',
+        prefix: '1'
+    };
+}

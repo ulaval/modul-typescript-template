@@ -9,13 +9,15 @@ import MIconButtonPlugin from '@modul/components/icon-button/icon-button';
 import MModalPlugin from '@modul/components/modal/modal';
 import MOptionPlugin from '@modul/components/option/option';
 import MTablePlugin from '@modul/components/table/table';
-import MTextFieldPlugin from '@modul/components/textfield/textfield';
+import { default as MTextFieldPlugin } from '@modul/components/textfield/textfield';
 import MI18nFilterPlugin from '@modul/filters/i18n/i18n';
 import '@modul/styles/main.scss';
 import { ENGLISH, FRENCH } from '@modul/utils/i18n/i18n';
 import '@modul/utils/polyfills';
 import MDefaultSpritesPlugin from '@modul/utils/svg/default-sprites';
 import MUtilsPlugin from '@modul/utils/utils-plugin';
+import DatepickerPlugin from '@ulaval/modul-components/dist/components/datepicker/datepicker';
+import OpacityTransitionPlugin from '@ulaval/modul-components/dist/components/transitions/opacity-transition/opacity-transition';
 import Vue from 'vue';
 import Vuex, { Store } from 'vuex';
 import appConfig from './common/app-config';
@@ -42,6 +44,8 @@ Vue.use(MButtonPlugin);
 Vue.use(MErrorPageNotFoundPlugin);
 Vue.use(MDropdownPlugin);
 Vue.use(Vuex);
+Vue.use(OpacityTransitionPlugin);
+Vue.use(DatepickerPlugin);
 
 const store: Store<any> = new Vuex.Store({
     strict: process.env.NODE_ENV !== 'production'
