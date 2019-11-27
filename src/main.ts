@@ -13,14 +13,16 @@ import MTextFieldPlugin from '@modul/components/textfield/textfield';
 import MI18nFilterPlugin from '@modul/filters/i18n/i18n';
 import '@modul/styles/main.scss';
 import { ENGLISH, FRENCH } from '@modul/utils/i18n/i18n';
-import '@modul/utils/polyfills';
 import MDefaultSpritesPlugin from '@modul/utils/svg/default-sprites';
 import MUtilsPlugin from '@modul/utils/utils-plugin';
+import FileUploadPlugin from '@ulaval/modul-components/dist/components/file-upload/file-upload';
+import RichTextLicensePlugin from '@ulaval/modul-components/dist/components/rich-text-editor/rich-text-license-plugin';
 import Vue from 'vue';
 import Vuex, { Store } from 'vuex';
 import appConfig from './common/app-config';
 import Root from './common/components/root/root';
 import router from './common/router';
+
 
 Vue.config.productionTip = false;
 
@@ -42,7 +44,8 @@ Vue.use(MButtonPlugin);
 Vue.use(MErrorPageNotFoundPlugin);
 Vue.use(MDropdownPlugin);
 Vue.use(Vuex);
-
+Vue.use(RichTextLicensePlugin, { key: 'test' });
+Vue.use(FileUploadPlugin);
 const store: Store<any> = new Vuex.Store({
     strict: process.env.NODE_ENV !== 'production'
 });

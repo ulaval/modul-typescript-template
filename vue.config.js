@@ -26,7 +26,10 @@ module.exports = {
             rules: [{
                 test: /\.js$/,
                 use: ["source-map-loader"],
-                enforce: "pre"
+                enforce: "pre",
+                exclude: [
+                    require("path").resolve('node_modules/froala-editor/js/languages'),
+                ]
             },
             {
                 enforce: 'pre',
@@ -34,7 +37,9 @@ module.exports = {
                 loader: "sass-loader",
                 options: {
                     sourceMap: true,
-                    includePaths: ["./node_modules/@ulaval/modul-components/dist/styles"]
+                    sassOptions: {
+                        includePaths: [require("path").resolve("node_modules/@ulaval/modul-components/dist/styles")]
+                    }
                 }
             },
             {
@@ -58,9 +63,8 @@ module.exports = {
             {
                 test: /.html$/,
                 loader: "vue-template-loader",
-                include: [
-                    /node_modules/,
-                    /src/
+                exclude: [
+                    /index.html/
                 ],
                 options: {
                     scoped: true
@@ -78,7 +82,6 @@ module.exports = {
             ]
         },
     },
-    baseUrl: undefined,
     outputDir: undefined,
     assetsDir: undefined,
     runtimeCompiler: true,

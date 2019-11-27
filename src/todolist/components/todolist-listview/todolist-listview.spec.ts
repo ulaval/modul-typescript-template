@@ -1,5 +1,5 @@
 import { TodolistState } from '@/todolist/model/todolist-model';
-import { genSnapshotsTests, PropsData } from '@jest/jest-utils';
+import { genSnapshotsTests, PropsData } from '../../../../jest/jest-utils';
 import TodolistListView from './todolist-listview';
 
 const loadingState: Partial<TodolistState> = {

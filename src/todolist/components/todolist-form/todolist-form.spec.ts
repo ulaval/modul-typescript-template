@@ -1,6 +1,7 @@
 import { TodolistFormState } from '@/todolist/model/todolist-model';
-import { genSnapshotsTests, PropsData } from '@jest/jest-utils';
+import { genSnapshotsTests, PropsData } from '../../../../jest/jest-utils';
 import TodolistForm from './todolist-form';
+
 
 const states: PropsData = {
     'new state': {
