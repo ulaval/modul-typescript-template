@@ -8,7 +8,6 @@ module.exports = {
         config.module.rules.delete("svg");
         config.module.rules.delete("scss");
     },
-
     configureWebpack: {
         resolve: {
             alias: {
@@ -84,7 +83,6 @@ module.exports = {
     },
     outputDir: undefined,
     assetsDir: undefined,
-    runtimeCompiler: true,
     productionSourceMap: false,
     parallel: undefined,
     css: undefined
