@@ -1,6 +1,0 @@
-<todolist-list-view v-if="state"
-                    :state="state"
-                    @open-new-form="$todolistModule.onOpenNewForm(state, 'new')"
-                    @confirm-form="$todolistModule.onConfirmForm(state, $event)"
-                    @close-form="$todolistModule.onCloseForm(state)"
-                    @delete-todo="$todolistModule.onDeleteTodo(state, $event)"></todolist-list-view>
