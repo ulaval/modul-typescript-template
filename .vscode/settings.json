@@ -1,0 +1,26 @@
+{
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "eslint.alwaysShowStatus": true,
+  "eslint.enable": true,
+  "stylelint.enable": true,
+  "cSpell.language": "en,fr",
+  "eslint.validate": ["typescript", "typescriptreact"],
+  "typescript.tsdk": "root\\node_modules\\typescript\\lib",
+
+  "editor.codeActionsOnSave": {
+    //  "source.fixAll.eslint": true,
+    "source.organizeImports": true
+  },
+  "search.exclude": {
+    "**/reports/": true,
+    "**/dist/": true,
+    "package-lock.lock": true
+  },
+
+  "vetur.useWorkspaceDependencies": true,
+  "vetur.format.defaultFormatter.html": "prettier"
+}
