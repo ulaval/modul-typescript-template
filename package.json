@@ -10,7 +10,7 @@
     "ui": "vue ui"
   },
   "dependencies": {
-    "@ulaval/modul-components": "^1.2.0-RC.1",
+    "@ulaval/modul-components": "^1.2.2",
     "core-js": "^3.6.4",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
