@@ -1,70 +1,51 @@
-import MAccordionGroupPlugin from '@modul/components/accordion-group/accordion-group';
-import MAccordionPlugin from '@modul/components/accordion/accordion';
-import MButtonPlugin from '@modul/components/button/button';
-import MDialogPlugin from '@modul/components/dialog/dialog';
-import MDropdownPlugin from '@modul/components/dropdown/dropdown';
-import MErrorPageNotFoundPlugin from '@modul/components/error-pages/error-page-not-found/error-page-not-found';
-import MI18nPlugin from '@modul/components/i18n/i18n';
-import MIconButtonPlugin from '@modul/components/icon-button/icon-button';
-import MModalPlugin from '@modul/components/modal/modal';
-import MOptionPlugin from '@modul/components/option/option';
-import MTablePlugin from '@modul/components/table/table';
-import MTextFieldPlugin from '@modul/components/textfield/textfield';
-import MI18nFilterPlugin from '@modul/filters/i18n/i18n';
-import '@modul/styles/main.scss';
-import { ENGLISH, FRENCH } from '@modul/utils/i18n/i18n';
-import '@modul/utils/polyfills';
-import MDefaultSpritesPlugin from '@modul/utils/svg/default-sprites';
-import MUtilsPlugin from '@modul/utils/utils-plugin';
+/* eslint-disable @typescript-eslint/typedef */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import {
+    DialogServicePlugin,
+    ENGLISH,
+    FormPlugin,
+    FRENCH,
+    RichTextLicensePlugin,
+    ToastServicePlugin,
+    UtilsPlugin,
+    UtilsPluginOptions,
+} from '@ulaval/modul-components';
+import '@ulaval/modul-components/lib/modul.min.css';
 import Vue from 'vue';
-import Vuex, { Store } from 'vuex';
-import appConfig from './common/app-config';
-import Root from './common/components/root/root';
-import router from './common/router';
+import App from './app.vue';
+import IconPlugin from './icons/icons';
+import router from './router';
+import './styles/main.scss';
+
+const utilsPluginOptions: UtilsPluginOptions = {
+    i18PluginOptions: {
+        curLang: FRENCH,
+    },
+    propagateVueParserErrors: false,
+};
 
 Vue.config.productionTip = false;
 
+Vue.use(UtilsPlugin, utilsPluginOptions);
+Vue.use(FormPlugin);
+Vue.use(ToastServicePlugin);
+Vue.use(RichTextLicensePlugin, { key: `test` });
+Vue.use(IconPlugin);
+Vue.use(DialogServicePlugin);
+
 const curLang: string = localStorage.getItem('lang') || FRENCH;
 
-Vue.use(MUtilsPlugin, { propagateVueParserErrors: false, i18PluginOptions: { curLang } }); // propagateVueError to console and use french
-Vue.use(MDefaultSpritesPlugin);
-Vue.use(MDialogPlugin);
-Vue.use(MI18nPlugin);
-Vue.use(MI18nFilterPlugin);
-Vue.use(MIconButtonPlugin);
-Vue.use(MModalPlugin);
-Vue.use(MAccordionGroupPlugin);
-Vue.use(MTablePlugin);
-Vue.use(MAccordionPlugin);
-Vue.use(MTextFieldPlugin);
-Vue.use(MOptionPlugin);
-Vue.use(MButtonPlugin);
-Vue.use(MErrorPageNotFoundPlugin);
-Vue.use(MDropdownPlugin);
-Vue.use(Vuex);
-
-const store: Store<any> = new Vuex.Store({
-    strict: process.env.NODE_ENV !== 'production'
-});
-
-Vue.use(appConfig, { store });
-
 let langPromise: Promise<any>;
-
 if (curLang === ENGLISH) {
-    langPromise = import(/* webpackChunkName: "en" */ '@/common/lang/en');
+    langPromise = import(/* webpackChunkName: "en" */ './lang/english');
 } else {
-    langPromise = import(/* webpackChunkName: "fr" */ '@/common/lang/fr');
+    langPromise = import(/* webpackChunkName: "fr" */ './lang/french');
 }
 
 langPromise.then((langPlugin: any) => {
     Vue.use(langPlugin.default);
-
-    const vue: Vue = new Vue({
-        store,
+    new Vue({
         router,
-        render: (h: any): any => h(Root)
-    });
-
-    vue.$mount('#app');
+        render: (h) => h(App),
+    }).$mount('#app');
 });

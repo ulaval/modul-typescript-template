@@ -1,11 +1,10 @@
 {
     "recommendations": [
-        "msjsdiag.debugger-for-chrome",
-        "eamodio.gitlens",
-        "shinnn.stylelint",
-        "ms-vscode.vscode-typescript-tslint-plugin",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
         "Orta.vscode-jest",
-        "mkaufman.htmlhint",
-        "mrmlnc.vscode-scss"
+        "streetsidesoftware.code-spell-checker-french",
+        "octref.vetur",
+        "stylelint.vscode-stylelint"
     ]
 }
